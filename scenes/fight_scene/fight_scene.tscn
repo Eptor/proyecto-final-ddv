@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://o27g6dclpgrm"]
+
+[ext_resource type="Texture2D" uid="uid://mf2lo05drdrp" path="res://assets/UI/backgrounds/main_menu/bg_fightscene.png" id="1_pgdo8"]
+
+[node name="FightScene" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_pgdo8")
