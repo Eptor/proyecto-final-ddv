@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="proyecto-final-ddv"
-run/main_scene="uid://o27g6dclpgrm"
+run/main_scene="uid://dwo4beohwxjw6"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="uid://dyq3lc373m60c"
 
