@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1rwxu3jng2ef"]
+[gd_scene load_steps=7 format=3 uid="uid://b1rwxu3jng2ef"]
 
 [ext_resource type="Texture2D" uid="uid://bhjkwkrswdmkj" path="res://assets/UI/fight_UI/ninepatch_default_blackt.png" id="1_ka4eu"]
+[ext_resource type="Script" uid="uid://e3m6lq7srnps" path="res://scenes/fight_scene/fight_sceneUI/fight_scene_ui.gd" id="1_y8u5u"]
 [ext_resource type="FontFile" uid="uid://tybb5lh7kdw5" path="res://assets/Fonts/dragon-warrior-iv.ttf" id="2_nctq4"]
-[ext_resource type="Texture2D" uid="uid://mu5dal2n4lbc" path="res://assets/UI/icons/items/knife.png" id="2_y8u5u"]
-[ext_resource type="Texture2D" uid="uid://cyawr356skraw" path="res://assets/UI/icons/bottles/Icon35.png" id="3_nctq4"]
-[ext_resource type="Texture2D" uid="uid://c32j2hc1m7ngr" path="res://assets/UI/icons/items/3.png" id="4_xretv"]
+[ext_resource type="PackedScene" uid="uid://df0w3twroh4ic" path="res://scenes/fight_scene/fight_sceneUI/Taco.tscn" id="6_xretv"]
 
 [sub_resource type="Theme" id="Theme_ka4eu"]
 
@@ -18,10 +17,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_y8u5u")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
+layout_mode = 0
 anchor_left = 0.098000005
 anchor_top = 0.71900004
 anchor_right = 0.90900004
@@ -63,19 +62,16 @@ alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Attack"
-icon = ExtResource("2_y8u5u")
 
 [node name="Items" type="Button" parent="HBoxContainer/NinePatchRect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Items"
-icon = ExtResource("3_nctq4")
 
 [node name="Run" type="Button" parent="HBoxContainer/NinePatchRect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Run"
-icon = ExtResource("4_xretv")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="HBoxContainer"]
 layout_mode = 2
@@ -85,3 +81,10 @@ patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
+
+[node name="Taco" parent="." instance=ExtResource("6_xretv")]
+layout_mode = 0
+offset_left = 114.000015
+offset_top = 531.0
+offset_right = 626.0
+offset_bottom = 1043.0

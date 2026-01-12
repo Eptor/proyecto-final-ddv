@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckc3bevm7bw2b"
-path="res://.godot/imported/Arcade - Double Dragon - Backgrounds - New-York 20XX.png-5a1d0890b8f4e5db151ecff3d731aecc.ctex"
+uid="uid://bscfavdkd1jr"
+path="res://.godot/imported/taco.png-464c0fce9ad41a30965e9ec9f76a1b07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Combat/Art/Arcade - Double Dragon - Backgrounds - New-York 20XX.png"
-dest_files=["res://.godot/imported/Arcade - Double Dragon - Backgrounds - New-York 20XX.png-5a1d0890b8f4e5db151ecff3d731aecc.ctex"]
+source_file="res://assets/UI/fight_UI/taco.png"
+dest_files=["res://.godot/imported/taco.png-464c0fce9ad41a30965e9ec9f76a1b07.ctex"]
 
 [params]
 
