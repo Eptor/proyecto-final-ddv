@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1rwxu3jng2ef"]
+[gd_scene load_steps=9 format=3 uid="uid://b1rwxu3jng2ef"]
 
 [ext_resource type="Texture2D" uid="uid://bhjkwkrswdmkj" path="res://assets/UI/fight_UI/ninepatch_default_blackt.png" id="1_ka4eu"]
-[ext_resource type="Script" uid="uid://e3m6lq7srnps" path="res://scenes/fight_scene/fight_sceneUI/fight_scene_ui.gd" id="1_y8u5u"]
+[ext_resource type="Script" uid="uid://e3m6lq7srnps" path="res://scenes/fight_scene/fight_sceneUI/Sripts/fight_scene_ui.gd" id="1_y8u5u"]
 [ext_resource type="FontFile" uid="uid://tybb5lh7kdw5" path="res://assets/Fonts/dragon-warrior-iv.ttf" id="2_nctq4"]
+[ext_resource type="Script" uid="uid://d3kmjulrjx2rq" path="res://scenes/fight_scene/fight_sceneUI/nine_patch_rect.gd" id="4_xretv"]
+[ext_resource type="Script" uid="uid://bo2lyxu03hcpd" path="res://scenes/fight_scene/fight_sceneUI/Sripts/Menu.gd" id="5_xretv"]
 [ext_resource type="PackedScene" uid="uid://df0w3twroh4ic" path="res://scenes/fight_scene/fight_sceneUI/Taco.tscn" id="6_xretv"]
 
 [sub_resource type="Theme" id="Theme_ka4eu"]
@@ -15,6 +17,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y8u5u")
@@ -42,6 +46,7 @@ patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
+script = ExtResource("4_xretv")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/NinePatchRect"]
 layout_mode = 1
@@ -57,6 +62,7 @@ offset_bottom = 0.0079956055
 theme = SubResource("Theme_y8u5u")
 theme_override_constants/separation = 22
 alignment = 1
+script = ExtResource("5_xretv")
 
 [node name="Attack" type="Button" parent="HBoxContainer/NinePatchRect/VBoxContainer"]
 layout_mode = 2

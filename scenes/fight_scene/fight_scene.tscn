@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://o27g6dclpgrm"]
 
 [ext_resource type="Texture2D" uid="uid://b006efucqw55o" path="res://assets/UI/backgrounds/fight_scenes/Arcade - Double Dragon - Backgrounds - New-York 20XX.png" id="1_ayqed"]
-[ext_resource type="Script" uid="uid://btemr5k42fo76" path="res://scenes/fight_scene/calle.gd" id="1_pxly3"]
+[ext_resource type="Script" uid="uid://btemr5k42fo76" path="res://scenes/fight_scene/fight_sceneUI/Sripts/calle.gd" id="1_pxly3"]
 [ext_resource type="Texture2D" uid="uid://c3077l3alrbby" path="res://assets/UI/backgrounds/fight_scenes/imagen_2026-01-10_195240372 (1).png" id="2_3g10t"]
 [ext_resource type="PackedScene" uid="uid://b1rwxu3jng2ef" path="res://scenes/fight_scene/fight_sceneUI/fight_sceneUI.tscn" id="2_6drue"]
 [ext_resource type="Texture2D" uid="uid://btkmnptsflfiu" path="res://assets/UI/backgrounds/fight_scenes/calle.png" id="2_pxly3"]
