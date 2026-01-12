@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6l8hs0ffh2ig"]
+[gd_scene load_steps=4 format=3 uid="uid://b6l8hs0ffh2ig"]
 
 [ext_resource type="Texture2D" uid="uid://cnp27n5yktk8w" path="res://assets/enemys/señor_bigote.png" id="1_duruu"]
+[ext_resource type="Script" uid="uid://bymn3kk1hjc2y" path="res://scenes/fight_scene/BOTS/bot_1.gd" id="1_npdk3"]
 [ext_resource type="PackedScene" uid="uid://dqjcqe1g2pbe1" path="res://scenes/fight_scene/BOTS/HP_bot.tscn" id="2_gcubj"]
 
 [node name="Bot1" type="Control"]
@@ -10,8 +11,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_npdk3")
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="bot" type="TextureButton" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -19,11 +21,6 @@ scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("1_duruu")
 stretch_mode = 1
 flip_h = true
-
-[node name="TextureRect" type="TextureRect" parent="TextureButton"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="HpBot" parent="." instance=ExtResource("2_gcubj")]
 layout_mode = 0

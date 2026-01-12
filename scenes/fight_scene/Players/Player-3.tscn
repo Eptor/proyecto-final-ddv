@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4nouprg5d7in"]
+
+[ext_resource type="Texture2D" uid="uid://tyly7ufqmfdh" path="res://assets/characters/CazadoraM.png" id="1_4tco7"]
+[ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/fight_scene/Players/HP_Player.tscn" id="2_rttm4"]
+
+[node name="Player-3" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("1_4tco7")
+
+[node name="HpPlayer" parent="." instance=ExtResource("2_rttm4")]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 198.0
+offset_right = 192.0
+offset_bottom = 244.0

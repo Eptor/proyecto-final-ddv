@@ -11,7 +11,6 @@ func _ready() -> void:
 		button.focus_entered.connect(_on_Button_focused.bind(button))
 		button.pressed.connect(_on_Button_pressed.bind(button))
 
-# --- obtiene solo botones, incluso si están dentro de contenedores ---
 func get_buttons_recursive(node: Node = self) -> Array:
 	var buttons: Array = []
 	for child in node.get_children():
@@ -39,3 +38,9 @@ func _on_Button_focused(button: BaseButton) -> void:
 
 func _on_Button_pressed(button: BaseButton) -> void:
 	emit_signal("button_pressed", button)
+
+func button_focus_en_nombre(nombre: String) -> void:
+	for button in get_buttons_recursive():
+		if button.name == nombre:
+			button.grab_focus()
+			return

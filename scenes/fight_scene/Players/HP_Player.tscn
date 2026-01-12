@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://cb0vcqrabnc4x"]
 
 [node name="HpPlayer" type="ProgressBar"]
+offset_right = 113.0
+offset_bottom = 51.0
+exp_edit = true

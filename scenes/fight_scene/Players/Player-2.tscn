@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbjvtlew1h3uo"]
+
+[ext_resource type="Texture2D" uid="uid://crvl7dc5vlxdv" path="res://assets/characters/BrujaL.png" id="1_b0mf8"]
+[ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/fight_scene/Players/HP_Player.tscn" id="2_vvc5c"]
+
+[node name="Player-2" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("1_b0mf8")
+
+[node name="HpPlayer" parent="." instance=ExtResource("2_vvc5c")]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 203.0
+offset_right = 184.0
+offset_bottom = 262.0

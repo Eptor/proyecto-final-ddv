@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj3sdmsqfjr6x"]
+
+[ext_resource type="Texture2D" uid="uid://d2ma55rmt7fb4" path="res://assets/characters/GuitarraL.png" id="1_vex37"]
+[ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/fight_scene/Players/HP_Player.tscn" id="2_0ygyi"]
+
+[node name="Player-4" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("1_vex37")
+
+[node name="HpPlayer" parent="." instance=ExtResource("2_0ygyi")]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 195.0
+offset_right = 198.0
+offset_bottom = 253.0
