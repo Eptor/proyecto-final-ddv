@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://d3kmjulrjx2rq" path="res://scenes/fight_scene/fight_sceneUI/Sripts/nine_patch_rect.gd" id="4_xretv"]
 [ext_resource type="Script" uid="uid://bo2lyxu03hcpd" path="res://scenes/fight_scene/fight_sceneUI/Sripts/Cursor.gd" id="5_xretv"]
 [ext_resource type="PackedScene" uid="uid://df0w3twroh4ic" path="res://scenes/fight_scene/fight_sceneUI/Taco.tscn" id="6_xretv"]
-[ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/fight_scene/Players/HP_Player.tscn" id="7_gl07w"]
+[ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/hp_bar/hp_bar.tscn" id="7_gl07w"]
 
 [sub_resource type="Theme" id="Theme_ka4eu"]
 

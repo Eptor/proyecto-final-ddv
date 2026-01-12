@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbjvtlew1h3uo"]
 
 [ext_resource type="Texture2D" uid="uid://crvl7dc5vlxdv" path="res://assets/characters/BrujaL.png" id="1_b0mf8"]
-[ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/fight_scene/Players/HP_Player.tscn" id="2_vvc5c"]
+[ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/hp_bar/hp_bar.tscn" id="2_vvc5c"]
 
 [node name="Player-2" type="Control"]
 layout_mode = 3

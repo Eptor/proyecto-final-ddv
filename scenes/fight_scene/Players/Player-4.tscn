@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bj3sdmsqfjr6x"]
 
 [ext_resource type="Texture2D" uid="uid://d2ma55rmt7fb4" path="res://assets/characters/GuitarraL.png" id="1_vex37"]
-[ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/fight_scene/Players/HP_Player.tscn" id="2_0ygyi"]
+[ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/hp_bar/hp_bar.tscn" id="2_0ygyi"]
 
 [node name="Player-4" type="Control"]
 layout_mode = 3

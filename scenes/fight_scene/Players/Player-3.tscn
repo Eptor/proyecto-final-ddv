@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d4nouprg5d7in"]
 
 [ext_resource type="Texture2D" uid="uid://tyly7ufqmfdh" path="res://assets/characters/CazadoraM.png" id="1_4tco7"]
-[ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/fight_scene/Players/HP_Player.tscn" id="2_rttm4"]
+[ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/hp_bar/hp_bar.tscn" id="2_rttm4"]
 
 [node name="Player-3" type="Control"]
 layout_mode = 3

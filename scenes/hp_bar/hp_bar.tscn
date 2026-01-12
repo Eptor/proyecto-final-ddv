@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb0vcqrabnc4x"]
+
+[ext_resource type="Script" uid="uid://cc8ob3ako8x8r" path="res://scenes/hp_bar/hp_bar.gd" id="2_cx0le"]
+
+[node name="hp_player" type="TextureProgressBar"]
+anchors_preset = -1
+anchor_right = 0.08800001
+anchor_bottom = 0.071
+offset_right = 0.35999298
+offset_bottom = -0.12000275
+exp_edit = true
+tint_under = Color(11.223193, 11.223193, 11.223193, 1)
+tint_over = Color(0, 0, 0, 1)
+tint_progress = Color(0.7720886, 0, 0.08509212, 1)
+script = ExtResource("2_cx0le")
