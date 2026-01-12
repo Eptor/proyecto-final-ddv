@@ -1,7 +1,6 @@
 extends Control
 
 @onready var _opciones_menu: Menu = $HBoxContainer/NinePatchRect/VBoxContainer
-@onready var _bot_button: TextureButton = get_node("../Bot1/Bot")
 
 
 func _ready() -> void:
@@ -17,9 +16,14 @@ func _on_opcion_button_pressed(button: BaseButton) -> void:
 			activar_seleccion_bot()
 		_:
 			print("Botón presionado: ", button.text)
-
+#"../Bot1"
 func activar_seleccion_bot() -> void:
-	if _bot_button:
-		_bot_button.grab_focus()
+	var contenedor_bot := get_node_or_null("../../Bot1")
+	if contenedor_bot:
+		var boton:TextureButton = contenedor_bot.get_node("bot")
+		if boton and boton is BaseButton:
+			boton.grab_focus()
+		else:
+			print("No encontré el botón 'Bot'")
 	else:
-		print("Botón 'Bot' no encontrado")
+		print("No encontré el nodo 'Bot1'")
