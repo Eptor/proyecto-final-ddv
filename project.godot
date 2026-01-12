@@ -15,6 +15,11 @@ run/main_scene="uid://dwo4beohwxjw6"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="uid://dyq3lc373m60c"
 
+[autoload]
+
+GameManager="*res://signeltons/Game_Manager/Game_Manager.gd"
+DebugComabte="*res://scenes/fight_scene/fight_sceneUI/Sripts/Debug_Comabte.gd"
+
 [display]
 
 window/size/viewport_width=1280
