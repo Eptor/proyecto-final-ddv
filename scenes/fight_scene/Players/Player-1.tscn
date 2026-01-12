@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://jmnmf88er18r"]
+[gd_scene load_steps=2 format=3 uid="uid://jmnmf88er18r"]
 
 [ext_resource type="Texture2D" uid="uid://dvyssqy10pgoj" path="res://assets/characters/EspadaP.png" id="1_smxn3"]
-[ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/fight_scene/Players/HP_Player.tscn" id="2_7kugb"]
 
 [node name="Player-1" type="Control"]
 layout_mode = 3
@@ -13,10 +12,3 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("1_smxn3")
-
-[node name="HpPlayer" parent="Espada" instance=ExtResource("2_7kugb")]
-layout_mode = 0
-offset_left = 4.9999995
-offset_top = 1009.9999
-offset_right = 207.0
-offset_bottom = 1064.9999
