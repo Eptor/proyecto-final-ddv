@@ -22,9 +22,9 @@ texture_normal = ExtResource("1_duruu")
 stretch_mode = 1
 flip_h = true
 
-[node name="HpBot" parent="." instance=ExtResource("2_gcubj")]
+[node name="HpBot" parent="bot" instance=ExtResource("2_gcubj")]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 206.0
-offset_right = 177.0
-offset_bottom = 268.0
+offset_left = 54.999996
+offset_top = 1029.9999
+offset_right = 221.0
+offset_bottom = 1091.9999

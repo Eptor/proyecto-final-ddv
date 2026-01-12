@@ -31,5 +31,5 @@ func activar_seleccion_bot() -> void:
 		print("No encontré el nodo 'Bot1'")
 
 func _on_enemy_pressed() -> void:
-	# Aquí regresas el foco al menú
+	# Aquí Afectar la barra del bot 
 	_opciones_menu.button_focus(0)

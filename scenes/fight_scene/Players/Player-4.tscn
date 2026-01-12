@@ -7,16 +7,16 @@
 layout_mode = 3
 anchors_preset = 0
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="Bardo" type="TextureButton" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("1_vex37")
 
-[node name="HpPlayer" parent="." instance=ExtResource("2_0ygyi")]
+[node name="HpPlayer" parent="Bardo" instance=ExtResource("2_0ygyi")]
 layout_mode = 0
-offset_left = -1.0
-offset_top = 195.0
-offset_right = 198.0
-offset_bottom = 253.0
+offset_left = -4.9999995
+offset_top = 974.9999
+offset_right = 194.0
+offset_bottom = 1032.9999

@@ -7,16 +7,16 @@
 layout_mode = 3
 anchors_preset = 0
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="Cazadora" type="TextureButton" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("1_4tco7")
 
-[node name="HpPlayer" parent="." instance=ExtResource("2_rttm4")]
+[node name="HpPlayer" parent="Cazadora" instance=ExtResource("2_rttm4")]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 198.0
-offset_right = 192.0
-offset_bottom = 244.0
+offset_left = 14.999998
+offset_top = 989.9999
+offset_right = 204.0
+offset_bottom = 1035.9999
