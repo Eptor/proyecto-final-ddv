@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="proyecto-final-ddv"
-run/main_scene="uid://dwo4beohwxjw6"
+run/main_scene="uid://dqur4ktafccmq"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="uid://dyq3lc373m60c"
+
+[autoload]
+
+game_manager="*res://singletons/Game_Manager/Game_Manager.gd"
 
 [display]
 

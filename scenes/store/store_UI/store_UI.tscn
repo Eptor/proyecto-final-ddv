@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7l37bnuy8gsu"]
+[gd_scene load_steps=11 format=3 uid="uid://c7l37bnuy8gsu"]
 
 [ext_resource type="Texture2D" uid="uid://bhjkwkrswdmkj" path="res://assets/UI/fight_UI/ninepatch_default_blackt.png" id="1_jvqfc"]
 [ext_resource type="FontFile" uid="uid://tybb5lh7kdw5" path="res://assets/Fonts/dragon-warrior-iv.ttf" id="2_bk2gx"]
@@ -15,6 +15,20 @@ default_font = ExtResource("2_bk2gx")
 font = ExtResource("2_bk2gx")
 
 [sub_resource type="Theme" id="Theme_khh63"]
+
+[sub_resource type="GDScript" id="GDScript_khh63"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="store_UI" type="Control"]
 layout_mode = 3
@@ -65,17 +79,17 @@ theme = SubResource("Theme_y8u5u")
 theme_override_constants/separation = 22
 alignment = 1
 
-[node name="Attack" type="Button" parent="HBoxContainer/NinePatchRect/VBoxContainer"]
+[node name="Buy" type="Button" parent="HBoxContainer/NinePatchRect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
-text = "BUY"
+text = "Buy"
 
 [node name="Items" type="Button" parent="HBoxContainer/NinePatchRect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Items"
 
-[node name="Run" type="Button" parent="HBoxContainer/NinePatchRect/VBoxContainer"]
+[node name="Exit" type="Button" parent="HBoxContainer/NinePatchRect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Exit"
@@ -118,18 +132,19 @@ theme = SubResource("Theme_khh63")
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="option1" type="Button" parent="HBoxContainer/NinePatchRect2/HBoxContainer"]
+[node name="Health" type="Button" parent="HBoxContainer/NinePatchRect2/HBoxContainer"]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-text = "Potion Red"
+text = "Poción de vida"
 icon = ExtResource("3_khh63")
+script = SubResource("GDScript_khh63")
 
-[node name="option2" type="Button" parent="HBoxContainer/NinePatchRect2/HBoxContainer"]
+[node name="Power" type="Button" parent="HBoxContainer/NinePatchRect2/HBoxContainer"]
 layout_mode = 2
-text = "Potion Yellow"
+text = "Poción de poder"
 icon = ExtResource("4_xahyl")
 
-[node name="option3" type="Button" parent="HBoxContainer/NinePatchRect2/HBoxContainer"]
+[node name="Stamina" type="Button" parent="HBoxContainer/NinePatchRect2/HBoxContainer"]
 layout_mode = 2
-text = "Potion Purple"
+text = "Poción de energía"
 icon = ExtResource("5_u8v28")
