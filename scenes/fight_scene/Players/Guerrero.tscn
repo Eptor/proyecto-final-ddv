@@ -1,17 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://m1ostgfbcwbj"]
+[gd_scene load_steps=5 format=3 uid="uid://bpyj4hki5kg8h"]
 
 [ext_resource type="Texture2D" uid="uid://dvyssqy10pgoj" path="res://assets/characters/EspadaP.png" id="1_3ixb8"]
+[ext_resource type="Script" uid="uid://bksncugvamwcl" path="res://scenes/fight_scene/Players/guerrero.gd" id="1_450ma"]
+[ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/hp_bar/hp_bar.tscn" id="3_1q4hi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_450ma"]
-size = Vector2(739, 675.5)
+size = Vector2(124.75, 129.5)
 
 [node name="Guerrero" type="CharacterBody2D"]
+script = ExtResource("1_450ma")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(360.99997, 359.99997)
-scale = Vector2(0.7, 0.7)
+position = Vector2(54.299988, 60.799984)
+scale = Vector2(0.100976594, 0.115625024)
 texture = ExtResource("1_3ixb8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(383, 364.75)
+position = Vector2(60.625, 66.25)
 shape = SubResource("RectangleShape2D_450ma")
+
+[node name="hp_player" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_1q4hi")]
+offset_left = 13.0
+offset_top = 134.0
+offset_right = 109.0
+offset_bottom = 160.0
+player = NodePath("..")

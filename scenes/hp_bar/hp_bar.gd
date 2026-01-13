@@ -1,14 +1,14 @@
-extends ProgressBar
+extends TextureProgressBar
 
-var life_max : float = 100.00
+@export var player: Guerrero
 
-# Called when the node enters the scene tree for the first time.
+#por debajo del 5 porciento se mira vacia la barra ojo ahi 
+
 func _ready() -> void:
-	pass # Replace with function body.
+	max_value = player.maxHealth
+	value = player.currentHealth
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	player.take_damage.connect(on_take_damage)
 
-func bajar_vida(amount_damage : float) -> void:
-	life_max =- amount_damage
+func on_take_damage(amount: float) -> void:
+	value = player.currentHealth

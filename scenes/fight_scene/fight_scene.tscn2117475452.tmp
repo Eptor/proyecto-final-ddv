@@ -22,5 +22,6 @@ offset_right = 28.0
 offset_bottom = 232.0
 
 [node name="Guerrero" parent="." instance=ExtResource("4_ayqed")]
-position = Vector2(740, 29)
-currentHealth = 25.0
+position = Vector2(764, 39)
+maxHealth = null
+currentHealth = null

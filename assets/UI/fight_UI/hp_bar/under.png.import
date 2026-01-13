@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hsjosb6ck4a3"
-path="res://.godot/imported/barra de vida original 576x256.png-67df61a273cda795fb084f2016780976.ctex"
+uid="uid://bt0lldgrd2hp3"
+path="res://.godot/imported/under.png-537fe49859741ded9c08dc6a53577689.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/fight_scene/BOTS/barra de vida original 576x256.png"
-dest_files=["res://.godot/imported/barra de vida original 576x256.png-67df61a273cda795fb084f2016780976.ctex"]
+source_file="res://assets/UI/fight_UI/hp_bar/under.png"
+dest_files=["res://.godot/imported/under.png-537fe49859741ded9c08dc6a53577689.ctex"]
 
 [params]
 

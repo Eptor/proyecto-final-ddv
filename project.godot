@@ -15,6 +15,11 @@ run/main_scene="uid://dwo4beohwxjw6"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="uid://dyq3lc373m60c"
 
+[autoload]
+
+GameManager="*res://singletons/Game_Manager/Game_Manager.gd"
+SignalManager="*res://singletons/Game_Manager/signal_manager.gd"
+
 [display]
 
 window/size/viewport_width=1280
