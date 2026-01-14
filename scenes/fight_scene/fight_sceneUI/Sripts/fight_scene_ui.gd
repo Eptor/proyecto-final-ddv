@@ -56,7 +56,7 @@ func _on_enemy_pressed() -> void:
 	# Aquí Afectar la barra del bot 
 	_opciones_menu.button_focus(0)
 
-
+# El boton debera regresarte al mundo y salir del combate
 func _on_run_pressed() -> void:
 	display_text("Se evitó el Combate")
 	await get_tree().create_timer(2.0).timeout  # espera 2 segundos
