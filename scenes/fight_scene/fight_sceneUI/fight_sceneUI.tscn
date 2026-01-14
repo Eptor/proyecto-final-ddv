@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1rwxu3jng2ef"]
+[gd_scene load_steps=10 format=3 uid="uid://b1rwxu3jng2ef"]
 
 [ext_resource type="Texture2D" uid="uid://bhjkwkrswdmkj" path="res://assets/UI/fight_UI/ninepatch_default_blackt.png" id="1_ka4eu"]
 [ext_resource type="Script" uid="uid://e3m6lq7srnps" path="res://scenes/fight_scene/fight_sceneUI/Sripts/fight_scene_ui.gd" id="1_y8u5u"]
@@ -11,6 +11,10 @@
 
 [sub_resource type="Theme" id="Theme_y8u5u"]
 default_font = ExtResource("2_nctq4")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xretv"]
+font = ExtResource("2_nctq4")
+font_size = 20
 
 [node name="FightSceneUi" type="Control"]
 layout_mode = 3
@@ -87,6 +91,33 @@ patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/NinePatchRect2"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 214.0
+offset_bottom = 50.0
+
+[node name="Label" type="Label" parent="HBoxContainer/NinePatchRect2/VBoxContainer"]
+layout_mode = 2
+text = "Nombre1"
+label_settings = SubResource("LabelSettings_xretv")
+
+[node name="Label2" type="Label" parent="HBoxContainer/NinePatchRect2/VBoxContainer"]
+layout_mode = 2
+text = "Nombre1"
+label_settings = SubResource("LabelSettings_xretv")
+
+[node name="Label3" type="Label" parent="HBoxContainer/NinePatchRect2/VBoxContainer"]
+layout_mode = 2
+text = "Nombre1"
+label_settings = SubResource("LabelSettings_xretv")
+
+[node name="Label4" type="Label" parent="HBoxContainer/NinePatchRect2/VBoxContainer"]
+layout_mode = 2
+text = "Nombre1"
+label_settings = SubResource("LabelSettings_xretv")
 
 [node name="Taco" parent="." instance=ExtResource("6_xretv")]
 layout_mode = 0
