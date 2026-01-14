@@ -1,15 +1,30 @@
 extends Control
 
 @onready var _opciones_menu: Menu = $HBoxContainer/NinePatchRect/VBoxContainer
+signal Noti_close
 
 
 func _ready() -> void:
 	$Notificaciones.hide()
-	display_text("El GODIN Se interpone en tu 
-camino")
-	_opciones_menu.button_focus(0)
-	_opciones_menu.connect_to_button(self, "opcion")
+	$HBoxContainer/NinePatchRect.hide()
+	$Taco.hide()
+	display_text("El GODIN Se interpone en tu camino")
 	
+	if not is_connected("Noti_close", Callable(self, "_inline_noti")):
+		connect("Noti_close", Callable(func():
+			$HBoxContainer/NinePatchRect.show()
+			$Taco.show()
+			_opciones_menu.button_focus(0)
+		))
+
+
+
+func _input(event):
+	if Input.is_action_just_pressed("ui_up")and $Notificaciones.visible:
+		$Notificaciones.hide()
+		emit_signal("Noti_close")
+
+
 func display_text(text):
 	$Notificaciones.show()
 	$Notificaciones/Label.text = text
