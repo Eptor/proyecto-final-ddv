@@ -24,4 +24,5 @@ offset_left = 13.0
 offset_top = 134.0
 offset_right = 109.0
 offset_bottom = 160.0
+value = 50.0
 player = NodePath("..")

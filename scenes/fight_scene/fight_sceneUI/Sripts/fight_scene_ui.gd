@@ -1,11 +1,41 @@
 extends Control
+@export var enemi: Resource
 
 @onready var _opciones_menu: Menu = $HBoxContainer/NinePatchRect/VBoxContainer
 
+signal Noti_close
+
 
 func _ready() -> void:
-	_opciones_menu.button_focus(0)
-	_opciones_menu.connect_to_button(self, "opcion")
+	set_HP($"../../Guerrero/hp_player",State.HP_Actual,State.HP_Max)
+	
+	
+	$Notificaciones.hide()
+	$HBoxContainer/NinePatchRect.hide()
+	$Taco.hide()
+	display_text("El GODIN Se interpone en tu camino")
+	
+	if not is_connected("Noti_close", Callable(self, "_inline_noti")):
+		connect("Noti_close", Callable(func():
+			$HBoxContainer/NinePatchRect.show()
+			$Taco.show()
+			_opciones_menu.button_focus(0)
+		))
+
+func set_HP(progress_bar,HP_Actual,HP_Max):
+	progress_bar.value =HP_Actual
+	progress_bar.max_value = HP_Max
+	progress_bar.get_node("Label").text = "HP: %d|%d" % [HP_Actual,HP_Max]
+
+func _input(event):
+	if Input.is_action_just_pressed("ui_up")and $Notificaciones.visible:
+		$Notificaciones.hide()
+		emit_signal("Noti_close")
+
+
+func display_text(text):
+	$Notificaciones.show()
+	$Notificaciones/Label.text = text
 
 func _on_opcion_button_focused(_button: BaseButton) -> void:
 	pass
@@ -33,3 +63,9 @@ func activar_seleccion_bot() -> void:
 func _on_enemy_pressed() -> void:
 	# Aquí Afectar la barra del bot 
 	_opciones_menu.button_focus(0)
+
+# El boton debera regresarte al mundo y salir del combate
+func _on_run_pressed() -> void:
+	display_text("Se evitó el Combate")
+	await get_tree().create_timer(2.0).timeout  # espera 2 segundos
+	get_tree().quit()
