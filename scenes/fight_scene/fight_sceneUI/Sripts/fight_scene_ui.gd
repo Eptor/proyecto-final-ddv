@@ -4,8 +4,15 @@ extends Control
 
 
 func _ready() -> void:
+	$Notificaciones.hide()
+	display_text("El GODIN Se interpone en tu 
+camino")
 	_opciones_menu.button_focus(0)
 	_opciones_menu.connect_to_button(self, "opcion")
+	
+func display_text(text):
+	$Notificaciones.show()
+	$Notificaciones/Label.text = text
 
 func _on_opcion_button_focused(_button: BaseButton) -> void:
 	pass

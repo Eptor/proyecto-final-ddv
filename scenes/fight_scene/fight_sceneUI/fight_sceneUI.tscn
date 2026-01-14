@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1rwxu3jng2ef"]
+[gd_scene load_steps=10 format=3 uid="uid://b1rwxu3jng2ef"]
 
 [ext_resource type="Texture2D" uid="uid://bhjkwkrswdmkj" path="res://assets/UI/fight_UI/ninepatch_default_blackt.png" id="1_ka4eu"]
 [ext_resource type="Script" uid="uid://e3m6lq7srnps" path="res://scenes/fight_scene/fight_sceneUI/Sripts/fight_scene_ui.gd" id="1_y8u5u"]
@@ -11,6 +11,15 @@
 
 [sub_resource type="Theme" id="Theme_y8u5u"]
 default_font = ExtResource("2_nctq4")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xretv"]
+bg_color = Color(0.03839716, 0.038397174, 0.038397126, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.9999998, 0.89602464, 0.8219683, 1)
+border_blend = true
 
 [node name="FightSceneUi" type="Control"]
 layout_mode = 3
@@ -94,3 +103,42 @@ offset_left = 99.99999
 offset_top = 523.0
 offset_right = 612.0
 offset_bottom = 1035.0
+
+[node name="Notificaciones" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 35.0
+offset_top = 10.0
+offset_right = -45.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xretv")
+
+[node name="Label" type="Label" parent="Notificaciones"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 18.0
+offset_right = 1022.0
+offset_bottom = 93.0
+pivot_offset = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("2_nctq4")
+theme_override_font_sizes/font_size = 36
+text = "El GODIN Se interpone en tu 
+camino"
+
+[node name="Label2" type="Label" parent="Notificaciones"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -53.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("2_nctq4")
+theme_override_font_sizes/font_size = 36
+text = ">"
