@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ddg60k783vsgu"]
+
+[node name="TextureProgressBar" type="TextureProgressBar"]
+offset_left = 64.0
+offset_top = 182.0
+offset_right = 104.0
+offset_bottom = 222.0

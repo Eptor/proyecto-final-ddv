@@ -1,6 +1,7 @@
 extends TextureProgressBar
 
 @export var player: Guerrero
+@export var Godin: Bot1
 var HP_Actual = 35
 var HP_Max = 50
 var damage = 20
