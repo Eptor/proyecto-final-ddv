@@ -1,10 +1,15 @@
 extends Control
+@export var enemi: Resource
 
 @onready var _opciones_menu: Menu = $HBoxContainer/NinePatchRect/VBoxContainer
+
 signal Noti_close
 
 
 func _ready() -> void:
+	set_HP($"../../Guerrero/hp_player",State.HP_Actual,State.HP_Max)
+	
+	
 	$Notificaciones.hide()
 	$HBoxContainer/NinePatchRect.hide()
 	$Taco.hide()
@@ -17,7 +22,10 @@ func _ready() -> void:
 			_opciones_menu.button_focus(0)
 		))
 
-
+func set_HP(progress_bar,HP_Actual,HP_Max):
+	progress_bar.value =HP_Actual
+	progress_bar.max_value = HP_Max
+	progress_bar.get_node("Label").text = "HP: %d|%d" % [HP_Actual,HP_Max]
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_up")and $Notificaciones.visible:

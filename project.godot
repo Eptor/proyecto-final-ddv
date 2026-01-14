@@ -19,6 +19,7 @@ config/icon="uid://dyq3lc373m60c"
 
 GameManager="*res://singletons/Game_Manager/Game_Manager.gd"
 SignalManager="*res://singletons/Game_Manager/signal_manager.gd"
+State="*res://scenes/hp_bar/State.gd"
 
 [display]
 
