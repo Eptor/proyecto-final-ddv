@@ -105,6 +105,7 @@ offset_right = 612.0
 offset_bottom = 1035.0
 
 [node name="Notificaciones" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -142,3 +143,5 @@ pivot_offset = Vector2(3, 3)
 theme_override_fonts/font = ExtResource("2_nctq4")
 theme_override_font_sizes/font_size = 36
 text = ">"
+
+[connection signal="pressed" from="HBoxContainer/NinePatchRect/VBoxContainer/Run" to="." method="_on_run_pressed"]
