@@ -7,7 +7,7 @@ signal Noti_close
 
 
 func _ready() -> void:
-	set_HP($bot,enemi.HP,enemi.HP)
+	set_HP($"../../Bot1/bot/hp_bot",enemi.HP,enemi.HP)
 	set_HP($"../../Guerrero/hp_player",State.HP_Actual,State.HP_Max)
 	
 	
