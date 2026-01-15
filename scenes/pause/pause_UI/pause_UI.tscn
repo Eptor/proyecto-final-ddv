@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://btytqicy2272h"]
+[gd_scene load_steps=17 format=3 uid="uid://btytqicy2272h"]
 
 [ext_resource type="Texture2D" uid="uid://bhjkwkrswdmkj" path="res://assets/UI/fight_UI/ninepatch_default_blackt.png" id="1_3onpl"]
 [ext_resource type="Script" uid="uid://7axo0rq4f7ut" path="res://scenes/pause/pause_UI/pause_ui.gd" id="1_vte5a"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b7jwjtl4b7dxw" path="res://assets/UI/icons/bottles/Icon11.png" id="5_avjgs"]
 [ext_resource type="Texture2D" uid="uid://tyly7ufqmfdh" path="res://assets/characters/CazadoraM.png" id="6_nv3ow"]
 [ext_resource type="Texture2D" uid="uid://d2ma55rmt7fb4" path="res://assets/characters/GuitarraL.png" id="7_7yacm"]
+[ext_resource type="Script" uid="uid://d2qgxgda7vsi7" path="res://scenes/pause/pause_UI/curar_panel.gd" id="11_5hvr2"]
 
 [sub_resource type="Theme" id="Theme_ka4eu"]
 
@@ -119,7 +120,7 @@ grow_vertical = 2
 theme = SubResource("Theme_khh63")
 theme_override_constants/separation = 20
 
-[node name="option1" type="Button" parent="HBoxContainer/NinePatchRect2/HBoxContainer"]
+[node name="potion_red" type="Button" parent="HBoxContainer/NinePatchRect2/HBoxContainer"]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 text = " Potion Red "
@@ -127,7 +128,7 @@ icon = ExtResource("3_edype")
 icon_alignment = 1
 vertical_icon_alignment = 0
 
-[node name="Label" type="Label" parent="HBoxContainer/NinePatchRect2/HBoxContainer/option1"]
+[node name="Label" type="Label" parent="HBoxContainer/NinePatchRect2/HBoxContainer/potion_red"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.257
@@ -141,14 +142,14 @@ offset_bottom = 0.04798889
 text = "x 0"
 horizontal_alignment = 1
 
-[node name="option2" type="Button" parent="HBoxContainer/NinePatchRect2/HBoxContainer"]
+[node name="potion_yellow" type="Button" parent="HBoxContainer/NinePatchRect2/HBoxContainer"]
 layout_mode = 2
 text = " Potion Yellow "
 icon = ExtResource("4_6k4di")
 icon_alignment = 1
 vertical_icon_alignment = 0
 
-[node name="Label" type="Label" parent="HBoxContainer/NinePatchRect2/HBoxContainer/option2"]
+[node name="Label" type="Label" parent="HBoxContainer/NinePatchRect2/HBoxContainer/potion_yellow"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.344
@@ -162,14 +163,14 @@ offset_bottom = 0.0009918213
 text = "x 0"
 horizontal_alignment = 1
 
-[node name="option3" type="Button" parent="HBoxContainer/NinePatchRect2/HBoxContainer"]
+[node name="potion_purple" type="Button" parent="HBoxContainer/NinePatchRect2/HBoxContainer"]
 layout_mode = 2
 text = " Potion Purple "
 icon = ExtResource("5_avjgs")
 icon_alignment = 1
 vertical_icon_alignment = 0
 
-[node name="Label" type="Label" parent="HBoxContainer/NinePatchRect2/HBoxContainer/option3"]
+[node name="Label" type="Label" parent="HBoxContainer/NinePatchRect2/HBoxContainer/potion_purple"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.33600003
@@ -282,6 +283,74 @@ scale = Vector2(3.72406, 5.3710513)
 text = "Hp: 100 "
 label_settings = SubResource("LabelSettings_5kfc4")
 
+[node name="curar_panel" type="Panel" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.45100003
+anchor_top = 0.39000002
+anchor_right = 0.75900006
+anchor_bottom = 0.531
+offset_left = -16.28003
+offset_top = 16.199982
+offset_right = -21.52008
+offset_bottom = 15.679993
+script = ExtResource("11_5hvr2")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="curar_panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 2.0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="curar_panel/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.998
+anchor_bottom = 1.0
+offset_right = -140.05402
+offset_bottom = -2.0
+
+[node name="personaje1" type="Button" parent="curar_panel/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Personaje1"
+icon = ExtResource("4_djxsx")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="personaje2" type="Button" parent="curar_panel/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Personaje2"
+icon = ExtResource("5_5hvr2")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="personaje3" type="Button" parent="curar_panel/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Personaje3"
+icon = ExtResource("6_nv3ow")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="personaje4" type="Button" parent="curar_panel/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Personaje4"
+icon = ExtResource("7_7yacm")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
 [connection signal="pressed" from="HBoxContainer/NinePatchRect/VBoxContainer/Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="HBoxContainer/NinePatchRect/VBoxContainer/Items" to="." method="_on_items_pressed"]
 [connection signal="pressed" from="HBoxContainer/NinePatchRect/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="HBoxContainer/NinePatchRect2/HBoxContainer/potion_red" to="." method="_on_potion_red_pressed"]
+[connection signal="pressed" from="HBoxContainer/NinePatchRect2/HBoxContainer/potion_yellow" to="." method="_on_potion_yellow_pressed"]
+[connection signal="pressed" from="HBoxContainer/NinePatchRect2/HBoxContainer/potion_purple" to="." method="_on_potion_purple_pressed"]
+[connection signal="pressed" from="curar_panel/NinePatchRect/VBoxContainer/personaje1" to="." method="_on_personaje_1_pressed"]
+[connection signal="pressed" from="curar_panel/NinePatchRect/VBoxContainer/personaje2" to="." method="_on_personaje_2_pressed"]
+[connection signal="pressed" from="curar_panel/NinePatchRect/VBoxContainer/personaje3" to="." method="_on_personaje_3_pressed"]
+[connection signal="pressed" from="curar_panel/NinePatchRect/VBoxContainer/personaje4" to="." method="_on_personaje_4_pressed"]
