@@ -15,7 +15,7 @@ func _ready() -> void:
 	$"../../Bot1/bot".texture_normal =enemi.texture
 	
 	Life_Player =State.HP_Actual
-	Life_Bot =enemi.Hp
+	Life_Bot =enemi.HP
 	
 	$Notificaciones.hide()
 	$HBoxContainer/NinePatchRect.hide()
