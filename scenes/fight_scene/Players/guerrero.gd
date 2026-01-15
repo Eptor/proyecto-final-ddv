@@ -7,8 +7,8 @@ class_name Guerrero
 
 signal take_damage(amount: float)
 
-@export var maxHealth : float = 100.0
-@export var currentHealth : float = 100.0
+@export var maxHealth : int = 100.0
+@export var currentHealth : int = 100.0
 
 var is_dead := false
 
