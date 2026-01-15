@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://o27g6dclpgrm"]
+[gd_scene load_steps=8 format=3 uid="uid://o27g6dclpgrm"]
 
 [ext_resource type="PackedScene" uid="uid://bh00vhv172x5w" path="res://scenes/fight_scene/Fondo/Fondo.tscn" id="1_pf6vi"]
 [ext_resource type="PackedScene" uid="uid://b1rwxu3jng2ef" path="res://scenes/fight_scene/fight_sceneUI/fight_sceneUI.tscn" id="2_6drue"]
 [ext_resource type="PackedScene" uid="uid://b6l8hs0ffh2ig" path="res://scenes/fight_scene/BOTS/Bot-1.tscn" id="3_ayqed"]
 [ext_resource type="PackedScene" uid="uid://bpyj4hki5kg8h" path="res://scenes/fight_scene/Players/Escenas/Guerrero.tscn" id="4_ayqed"]
+[ext_resource type="PackedScene" uid="uid://cj2runbatntrk" path="res://scenes/fight_scene/Players/Escenas/Bruja.tscn" id="5_885g1"]
+[ext_resource type="PackedScene" uid="uid://b6fw8b23p0fsw" path="res://scenes/fight_scene/Players/Escenas/Cazadora.tscn" id="6_gnakn"]
+[ext_resource type="PackedScene" uid="uid://0p2pncmxfh0p" path="res://scenes/fight_scene/Players/Escenas/Bardo.tscn" id="7_vp5g2"]
 
 [node name="FightScene" type="Node2D"]
 
@@ -22,11 +25,14 @@ offset_right = 28.0
 offset_bottom = 232.0
 
 [node name="Guerrero" parent="." instance=ExtResource("4_ayqed")]
-position = Vector2(740, 29)
+position = Vector2(617, 312)
 currentHealth = 25.0
 
-[node name="Bot1" parent="." instance=ExtResource("4_3g10t")]
-offset_left = 36.0
-offset_top = 252.0
-offset_right = 36.0
-offset_bottom = 252.0
+[node name="Bruja" parent="." instance=ExtResource("5_885g1")]
+position = Vector2(782, 307)
+
+[node name="Cazadora" parent="." instance=ExtResource("6_gnakn")]
+position = Vector2(917, 307)
+
+[node name="Bardo" parent="." instance=ExtResource("7_vp5g2")]
+position = Vector2(1069, 306)

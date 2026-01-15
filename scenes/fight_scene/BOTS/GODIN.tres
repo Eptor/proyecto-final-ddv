@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://8urtlf6qurgl"]
 
-[ext_resource type="Script" uid="uid://c2xjmua00skqg" path="res://scenes/scenes/fight_scene/BOTS/Enemigo_HP.gd" id="1_vk4da"]
+[ext_resource type="Script" uid="uid://c2xjmua00skqg" path="res://scenes/fight_scene/BOTS/Enemigo_HP.gd" id="1_vk4da"]
 [ext_resource type="Texture2D" uid="uid://cnp27n5yktk8w" path="res://assets/enemys/señor_bigote.png" id="2_2uook"]
 
 [resource]
 script = ExtResource("1_vk4da")
 name = "GODIN"
 texture = ExtResource("2_2uook")
+HP = 100
 damage = 15

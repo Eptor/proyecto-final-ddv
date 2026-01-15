@@ -1,4 +1,4 @@
-class_name Guerrero  
+class_name Bardo  
 extends CharacterBody2D
 
 @onready var anim_attack: AnimationPlayer = $AnimationAttack
@@ -9,6 +9,12 @@ extends CharacterBody2D
 
 signal take_damage(amount: float)
 
+<<<<<<<< HEAD:scenes/fight_scene/Players/Escenas/bardo.gd
+========
+@export var maxHealth : int = 100.0
+@export var currentHealth : int = 100.0
+
+>>>>>>>> main:scenes/fight_scene/Players/Escenas/guerrero.gd
 var is_dead := false
 
 func _ready():
