@@ -1,12 +1,9 @@
 extends Control
 @export var enemi:Resource
-<<<<<<< Updated upstream
-=======
 @export var Espada:PartyData
 @export var Bruja: PartyData
 @export var Cazadora: PartyData
 @export var Bardo: PartyData
->>>>>>> Stashed changes
 
 @onready var _opciones_menu: Menu = $HBoxContainer/NinePatchRect/VBoxContainer
 var main_level_scene = preload("res://scenes/main_world/main_world.tscn")
@@ -32,12 +29,8 @@ func _ready() -> void:
 	$HBoxContainer/NinePatchRect.hide()
 	$Taco.hide()
 	display_text("El %s Se interpone en tu camino" % enemi.name.to_upper())
-<<<<<<< Updated upstream
 	
-	_opciones_menu.button_pressed.connect(_on_opcion_button_pressed)
-=======
->>>>>>> Stashed changes
-	
+func _opciones_menu.button_pressed.connect(_on_opcion_button_pressed)
 	if not is_connected("Noti_close", Callable(self, "_inline_noti")):
 		connect("Noti_close", Callable(func():
 			$HBoxContainer/NinePatchRect.show()

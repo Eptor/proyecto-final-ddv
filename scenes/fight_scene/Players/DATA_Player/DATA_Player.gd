@@ -1,7 +1,7 @@
 class_name PartyData extends Resource
 
 
-@export var adventurers: Array[String] = ["Guerrero", "Bruja", "Cazadora", "Bardo"]
+@export var adventurers: Array[String] = ["Espada", "Bruja", "Cazadora", "Bardo"]
 
 @export var name:String
 
