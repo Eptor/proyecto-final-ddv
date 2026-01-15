@@ -3,11 +3,13 @@ class_name PartyData extends Resource
 
 @export var adventurers: Array[String] = ["Guerrero", "Bruja", "Cazadora", "Bardo"]
 
+@export var name:String
+
 # Texturas opcionales (una por aventurero)
-@export var textures: Array[Texture2D] = []
+@export var texture: Texture2D
 
-# HP de cada aventurero
-@export var HP: Array[int] = [30, 30, 30, 30]
+# Un solo HP para todos
+@export var HP: int = 30
 
-# Daño de cada aventurero
-@export var damage: Array[int] = [20, 20, 20, 20]
+# Un solo daño para todos
+@export var damage: int = 20

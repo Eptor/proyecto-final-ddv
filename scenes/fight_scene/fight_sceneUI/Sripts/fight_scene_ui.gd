@@ -1,8 +1,18 @@
 extends Control
 @export var enemi:Resource
+<<<<<<< Updated upstream
+=======
+@export var Espada:PartyData
+@export var Bruja: PartyData
+@export var Cazadora: PartyData
+@export var Bardo: PartyData
+>>>>>>> Stashed changes
 
 @onready var _opciones_menu: Menu = $HBoxContainer/NinePatchRect/VBoxContainer
 var main_level_scene = preload("res://scenes/main_world/main_world.tscn")
+
+var Life_Player =0
+var Life_Bot =0
 
 var Life_Player =0
 var Life_Bot =0
@@ -22,8 +32,11 @@ func _ready() -> void:
 	$HBoxContainer/NinePatchRect.hide()
 	$Taco.hide()
 	display_text("El %s Se interpone en tu camino" % enemi.name.to_upper())
+<<<<<<< Updated upstream
 	
 	_opciones_menu.button_pressed.connect(_on_opcion_button_pressed)
+=======
+>>>>>>> Stashed changes
 	
 	if not is_connected("Noti_close", Callable(self, "_inline_noti")):
 		connect("Noti_close", Callable(func():
@@ -85,6 +98,7 @@ func _on_run_pressed() -> void:
 	get_tree().quit()
 
 
+<<<<<<< Updated upstream
 func _on_attack_pressed() -> void:
 	display_text("%s Ataco al enemigo" % enemi.name.to_upper())
 	activar_seleccion_bot()
@@ -99,3 +113,11 @@ func _on_items_pressed() -> void:
 		for item_name in inventory.keys():
 			items_text += "• %s x%d\n" % [item_name, inventory[item_name]]
 		display_text(items_text)
+=======
+	
+var jugador1 : PartyData
+func _on_attack_pressed() -> void:
+	jugador1 =Espada
+	display_text("%s atacó a %s" % [jugador1.name.to_upper(), enemi.name.to_upper()])
+	
+>>>>>>> Stashed changes
