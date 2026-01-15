@@ -1,7 +1,9 @@
 extends Node2D
 
 var selected_item_index: int = 0
-@onready var health_potion: Button = $TextureRect/store_UI/HBoxContainer/NinePatchRect2/HBoxContainer/option1
+@onready var health_potion_small: Button = $TextureRect/store_UI/HBoxContainer/NinePatchRect2/HBoxContainer/option1
+@onready var health_potion_large: Button = $TextureRect/store_UI/HBoxContainer/NinePatchRect2/HBoxContainer/option2
+@onready var damage_potion: Button = $TextureRect/store_UI/HBoxContainer/NinePatchRect2/HBoxContainer/option3
 @onready var buy_button: Button = $TextureRect/store_UI/HBoxContainer/NinePatchRect/VBoxContainer/Attack
 @onready var exit_button: Button = $TextureRect/store_UI/HBoxContainer/NinePatchRect/VBoxContainer/Run
 @onready var money_label: Label = $TextureRect/store_UI/HBoxContainer/NinePatchRect/Label
@@ -16,13 +18,19 @@ func _ready() -> void:
 	
 	update_money_label()
 
-	health_potion.pressed.connect(_selectPotion.bind(0))
-	buy_button.pressed.connect(buy_item.bind(selected_item_index, 1))
+	health_potion_small.pressed.connect(_selectPotion.bind(0))
+	health_potion_large.pressed.connect(_selectPotion.bind(1))
+	damage_potion.pressed.connect(_selectPotion.bind(2))
+	buy_button.pressed.connect(_on_buy_pressed)
 	exit_button.pressed.connect(_on_exit_pressed)
 
 
 func _selectPotion(index):
 	selected_item_index = index
+
+
+func _on_buy_pressed() -> void:
+	buy_item(selected_item_index, 1)
 
 
 func update_money_label() -> void:
