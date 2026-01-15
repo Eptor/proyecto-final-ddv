@@ -1,8 +1,118 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpyj4hki5kg8h"]
+[gd_scene load_steps=14 format=3 uid="uid://bpyj4hki5kg8h"]
 
 [ext_resource type="Texture2D" uid="uid://dvyssqy10pgoj" path="res://assets/characters/EspadaP.png" id="1_3ixb8"]
 [ext_resource type="Script" uid="uid://bksncugvamwcl" path="res://scenes/fight_scene/Players/guerrero.gd" id="1_450ma"]
 [ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/hp_bar/hp_bar.tscn" id="3_1q4hi"]
+
+[sub_resource type="Animation" id="Animation_rg5rd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1q4hi"]
+resource_name = "attack"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rg5rd"]
+_data = {
+&"RESET": SubResource("Animation_rg5rd"),
+&"attack": SubResource("Animation_1q4hi")
+}
+
+[sub_resource type="Animation" id="Animation_evimn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3w25r"]
+resource_name = "damage"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(0.95445794, 3.6098063e-06, 1.347661e-06, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g74ud"]
+_data = {
+&"RESET": SubResource("Animation_evimn"),
+&"damage": SubResource("Animation_3w25r")
+}
+
+[sub_resource type="Animation" id="Animation_ijky2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_g74ud"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.5137255), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ro7hs"]
+_data = {
+&"RESET": SubResource("Animation_ijky2"),
+&"death": SubResource("Animation_g74ud")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_450ma"]
 size = Vector2(124.75, 129.5)
@@ -14,6 +124,21 @@ script = ExtResource("1_450ma")
 position = Vector2(54.299988, 60.799984)
 scale = Vector2(0.100976594, 0.115625024)
 texture = ExtResource("1_3ixb8")
+
+[node name="AnimationAttack" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rg5rd")
+}
+
+[node name="AnimationDamage" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_g74ud")
+}
+
+[node name="AnimationDeath" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ro7hs")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(60.625, 66.25)

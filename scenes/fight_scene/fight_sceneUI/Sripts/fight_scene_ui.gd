@@ -69,3 +69,7 @@ func _on_run_pressed() -> void:
 	display_text("Se evitó el Combate")
 	await get_tree().create_timer(2.0).timeout  # espera 2 segundos
 	get_tree().quit()
+
+
+func _on_attack_pressed() -> void:
+	pass # Replace with function body.
