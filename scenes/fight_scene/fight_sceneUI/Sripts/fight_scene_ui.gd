@@ -1,6 +1,6 @@
 extends Control
-@export var enemi:Resource
-
+@export var enemi:Resource = null
+#@export var player: Resource
 @onready var _opciones_menu: Menu = $HBoxContainer/NinePatchRect/VBoxContainer
 
 var Life_Player =0
