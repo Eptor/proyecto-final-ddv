@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://df0w3twroh4ic"]
 
-[ext_resource type="Script" uid="uid://d270gdnickofr" path="res://scenes/fight_scene/fight_sceneUI/Sripts/taco.gd" id="1_qyy6g"]
+[ext_resource type="Script" uid="uid://d270gdnickofr" path="res://scenes/scenes/fight_scene/fight_sceneUI/Sripts/taco.gd" id="1_qyy6g"]
 [ext_resource type="Texture2D" uid="uid://bscfavdkd1jr" path="res://assets/UI/fight_UI/taco.png" id="1_x7swg"]
 
 [node name="Taco" type="TextureRect"]

@@ -1,5 +1,5 @@
-extends CharacterBody2D
-class_name Guerrero 
+class_name Guerrero  extends CharacterBody2D
+
 
 @onready var anim_attack: AnimationPlayer = $AnimationAttack
 @onready var anim_hurt: AnimationPlayer = $AnimationDamage
@@ -7,15 +7,15 @@ class_name Guerrero
 
 signal take_damage(amount: float)
 
-@export var maxHealth : float = 100.0
-@export var currentHealth : float = 100.0
-
+@export var maxHealth : int = 100.0
+@export var currentHealth : int = 100.0
 
 var is_dead := false
 
 func hurtByEnemy(amount_damage: float):
 	if is_dead:
 		return
+
 	currentHealth -= amount_damage
 	currentHealth = clamp(currentHealth, 0, maxHealth)
 

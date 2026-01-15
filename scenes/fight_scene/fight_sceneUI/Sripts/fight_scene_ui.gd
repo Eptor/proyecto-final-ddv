@@ -1,21 +1,29 @@
 extends Control
-@export var enemi: Resource
+@export var enemi:Resource
 
 @onready var _opciones_menu: Menu = $HBoxContainer/NinePatchRect/VBoxContainer
+var main_level_scene = preload("res://scenes/main_world/main_world.tscn")
+
+var Life_Player =0
+var Life_Bot =0
 
 signal Noti_close
 
 
 func _ready() -> void:
-
-	#set_HP($"../../Bot1/bot/hp_bot",enemi.HP,enemi.HP)
-	#set_HP($"../../Guerrero/hp_player",State.HP_Actual,State.HP_Max)
+	set_HP($"../../Bot1/bot/hp_bot",enemi.HP,enemi.HP)
+	set_HP($"../../Guerrero/hp_player",State.HP_Actual,State.HP_Max)
+	$"../../Bot1/bot".texture_normal =enemi.texture
 	
+	Life_Player =State.HP_Actual
+	Life_Bot =enemi.HP
 	
 	$Notificaciones.hide()
 	$HBoxContainer/NinePatchRect.hide()
 	$Taco.hide()
-	display_text("El GODIN Se interpone en tu camino")
+	display_text("El %s Se interpone en tu camino" % enemi.name.to_upper())
+	
+	_opciones_menu.button_pressed.connect(_on_opcion_button_pressed)
 	
 	if not is_connected("Noti_close", Callable(self, "_inline_noti")):
 		connect("Noti_close", Callable(func():
@@ -45,7 +53,11 @@ func _on_opcion_button_focused(_button: BaseButton) -> void:
 func _on_opcion_button_pressed(button: BaseButton) -> void:
 	match button.name:
 		"Attack":
-			activar_seleccion_bot()
+			_on_attack_pressed()
+		"Items":
+			_on_items_pressed()
+		"Run":
+			_on_run_pressed()
 		_:
 			print("Botón presionado: ", button.text)
 #"../Bot1"
@@ -66,8 +78,24 @@ func _on_enemy_pressed() -> void:
 	# Aquí Afectar la barra del bot 
 	_opciones_menu.button_focus(0)
 
-# El boton debera regresarte al mundo y salir del combate
+# El boton dchange_scene_to_packed(main_level_scene regresarte al mundo y salir del combate
 func _on_run_pressed() -> void:
 	display_text("Se evitó el Combate")
 	await get_tree().create_timer(2.0).timeout  # espera 2 segundos
 	get_tree().quit()
+
+
+func _on_attack_pressed() -> void:
+	display_text("%s Ataco al enemigo" % enemi.name.to_upper())
+	activar_seleccion_bot()
+
+
+func _on_items_pressed() -> void:
+	var inventory = GameManager.get_inventory_list()
+	if inventory.is_empty():
+		display_text("No tienes items")
+	else:
+		var items_text = "Inventario:\n"
+		for item_name in inventory.keys():
+			items_text += "• %s x%d\n" % [item_name, inventory[item_name]]
+		display_text(items_text)

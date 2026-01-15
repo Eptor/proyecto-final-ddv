@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=2 format=3 uid="uid://bfmnbivq0luv5"]
-=======
-[gd_scene load_steps=2 format=3 uid="uid://dqjcqe1g2pbe1"]
->>>>>>> parent of 941ea1b (Barra)
 
 [ext_resource type="Script" uid="uid://cdm10jvqqp8da" path="res://scenes/fight_scene/BOTS/hp_bot.gd" id="1_yvqxc"]
 
