@@ -7,11 +7,9 @@ signal Noti_close
 
 
 func _ready() -> void:
-<<<<<<< HEAD
-	set_HP($"../../Bot1/bot/hp_bot",enemi.HP,enemi.HP)
-=======
->>>>>>> parent of 941ea1b (Barra)
-	set_HP($"../../Guerrero/hp_player",State.HP_Actual,State.HP_Max)
+
+	#set_HP($"../../Bot1/bot/hp_bot",enemi.HP,enemi.HP)
+	#set_HP($"../../Guerrero/hp_player",State.HP_Actual,State.HP_Max)
 	
 	
 	$Notificaciones.hide()
