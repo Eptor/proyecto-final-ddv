@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=5 format=3 uid="uid://pxscpmc18461"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://b6l8hs0ffh2ig"]
+>>>>>>> parent of 941ea1b (Barra)
 
 [ext_resource type="Texture2D" uid="uid://cnp27n5yktk8w" path="res://assets/enemys/señor_bigote.png" id="1_duruu"]
 [ext_resource type="Script" uid="uid://bymn3kk1hjc2y" path="res://scenes/fight_scene/BOTS/bot_1.gd" id="1_npdk3"]

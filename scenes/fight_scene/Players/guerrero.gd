@@ -9,12 +9,15 @@ signal take_damage(amount: float)
 
 @export var maxHealth : float = 100.0
 @export var currentHealth : float = 100.0
+<<<<<<< HEAD
 
 var is_dead := false
 
 func hurtByEnemy(amount_damage: float):
 	if is_dead:
 		return
+=======
+>>>>>>> parent of 941ea1b (Barra)
 
 	currentHealth -= amount_damage
 	currentHealth = clamp(currentHealth, 0, maxHealth)

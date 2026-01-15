@@ -1,5 +1,5 @@
 extends Control
-@export var enemi: Resource = null
+@export var enemi: Resource
 
 @onready var _opciones_menu: Menu = $HBoxContainer/NinePatchRect/VBoxContainer
 
@@ -7,7 +7,10 @@ signal Noti_close
 
 
 func _ready() -> void:
+<<<<<<< HEAD
 	set_HP($"../../Bot1/bot/hp_bot",enemi.HP,enemi.HP)
+=======
+>>>>>>> parent of 941ea1b (Barra)
 	set_HP($"../../Guerrero/hp_player",State.HP_Actual,State.HP_Max)
 	
 	
