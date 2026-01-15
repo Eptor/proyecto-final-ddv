@@ -8,4 +8,4 @@ script = ExtResource("1_vk4da")
 name = "GODIN"
 texture = ExtResource("2_2uook")
 HP = 100
-damage = 50
+damage = 15
