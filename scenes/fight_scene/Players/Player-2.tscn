@@ -16,6 +16,9 @@ texture_normal = ExtResource("1_b0mf8")
 
 [node name="HpPlayer" parent="Bruja" instance=ExtResource("2_vvc5c")]
 layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 4.9999995
 offset_top = 1014.9999
 offset_right = 188.0
