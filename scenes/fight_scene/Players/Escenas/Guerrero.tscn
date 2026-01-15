@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bpyj4hki5kg8h"]
 
 [ext_resource type="Texture2D" uid="uid://dvyssqy10pgoj" path="res://assets/characters/EspadaP.png" id="1_3ixb8"]
-[ext_resource type="Script" uid="uid://bksncugvamwcl" path="res://scenes/fight_scene/Players/guerrero.gd" id="1_450ma"]
+[ext_resource type="Script" uid="uid://bksncugvamwcl" path="res://scenes/fight_scene/Players/Escenas/guerrero.gd" id="1_450ma"]
 [ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/hp_bar/hp_bar.tscn" id="3_1q4hi"]
 
 [sub_resource type="Animation" id="Animation_rg5rd"]

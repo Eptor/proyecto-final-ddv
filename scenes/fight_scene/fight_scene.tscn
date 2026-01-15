@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bh00vhv172x5w" path="res://scenes/fight_scene/Fondo/Fondo.tscn" id="1_pf6vi"]
 [ext_resource type="PackedScene" uid="uid://b1rwxu3jng2ef" path="res://scenes/fight_scene/fight_sceneUI/fight_sceneUI.tscn" id="2_6drue"]
 [ext_resource type="PackedScene" uid="uid://b6l8hs0ffh2ig" path="res://scenes/fight_scene/BOTS/Bot-1.tscn" id="3_ayqed"]
-[ext_resource type="PackedScene" uid="uid://bpyj4hki5kg8h" path="res://scenes/fight_scene/Players/Guerrero.tscn" id="4_ayqed"]
+[ext_resource type="PackedScene" uid="uid://bpyj4hki5kg8h" path="res://scenes/fight_scene/Players/Escenas/Guerrero.tscn" id="4_ayqed"]
 
 [node name="FightScene" type="Node2D"]
 
@@ -24,3 +24,9 @@ offset_bottom = 232.0
 [node name="Guerrero" parent="." instance=ExtResource("4_ayqed")]
 position = Vector2(740, 29)
 currentHealth = 25.0
+
+[node name="Bot1" parent="." instance=ExtResource("4_3g10t")]
+offset_left = 36.0
+offset_top = 252.0
+offset_right = 36.0
+offset_bottom = 252.0

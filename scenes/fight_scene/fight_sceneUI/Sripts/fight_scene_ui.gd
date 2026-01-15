@@ -1,19 +1,26 @@
 extends Control
-@export var enemi: Resource
+@export var enemi:Resource
 
 @onready var _opciones_menu: Menu = $HBoxContainer/NinePatchRect/VBoxContainer
+
+var Life_Player =0
+var Life_Bot =0
 
 signal Noti_close
 
 
 func _ready() -> void:
+	set_HP($"../../Bot1/bot/hp_bot",enemi.HP,enemi.HP)
 	set_HP($"../../Guerrero/hp_player",State.HP_Actual,State.HP_Max)
+	$"../../Bot1/bot".texture_normal =enemi.texture
 	
+	Life_Player =State.HP_Actual
+	Life_Bot =enemi.Hp
 	
 	$Notificaciones.hide()
 	$HBoxContainer/NinePatchRect.hide()
 	$Taco.hide()
-	display_text("El GODIN Se interpone en tu camino")
+	display_text("El %s Se interpone en tu camino" % enemi.name.to_upper())
 	
 	if not is_connected("Noti_close", Callable(self, "_inline_noti")):
 		connect("Noti_close", Callable(func():
@@ -72,4 +79,5 @@ func _on_run_pressed() -> void:
 
 
 func _on_attack_pressed() -> void:
-	pass # Replace with function body.
+	display_text("% Ataco al enemigo" % enemi.name.to_upper())
+	
