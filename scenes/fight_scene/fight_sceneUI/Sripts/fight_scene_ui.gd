@@ -1,5 +1,5 @@
 extends Control
-@export var enemi: Resource = null
+@export var enemi: Resource
 
 @onready var _opciones_menu: Menu = $HBoxContainer/NinePatchRect/VBoxContainer
 
@@ -7,7 +7,6 @@ signal Noti_close
 
 
 func _ready() -> void:
-	set_HP($"../../Bot1/bot/hp_bot",enemi.HP,enemi.HP)
 	set_HP($"../../Guerrero/hp_player",State.HP_Actual,State.HP_Max)
 	
 	
@@ -70,3 +69,7 @@ func _on_run_pressed() -> void:
 	display_text("Se evitó el Combate")
 	await get_tree().create_timer(2.0).timeout  # espera 2 segundos
 	get_tree().quit()
+
+
+func _on_attack_pressed() -> void:
+	pass # Replace with function body.

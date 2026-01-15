@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bhjkwkrswdmkj" path="res://assets/UI/fight_UI/ninepatch_default_blackt.png" id="1_ka4eu"]
 [ext_resource type="Script" uid="uid://e3m6lq7srnps" path="res://scenes/fight_scene/fight_sceneUI/Sripts/fight_scene_ui.gd" id="1_y8u5u"]
-[ext_resource type="Resource" uid="uid://dgwt8e6ppu1tx" path="res://scenes/fight_scene/BOTS/ui_Bot/GODIN.tres" id="2_gl07w"]
+[ext_resource type="Resource" uid="uid://dgwt8e6ppu1tx" path="res://scenes/fight_scene/BOTS/GODIN.tres" id="2_gl07w"]
 [ext_resource type="FontFile" uid="uid://tybb5lh7kdw5" path="res://assets/Fonts/dragon-warrior-iv.ttf" id="2_nctq4"]
 [ext_resource type="Script" uid="uid://d3kmjulrjx2rq" path="res://scenes/fight_scene/fight_sceneUI/Sripts/nine_patch_rect.gd" id="4_xretv"]
 [ext_resource type="Script" uid="uid://bo2lyxu03hcpd" path="res://scenes/fight_scene/fight_sceneUI/Sripts/Cursor.gd" id="5_xretv"]
@@ -146,4 +146,5 @@ theme_override_fonts/font = ExtResource("2_nctq4")
 theme_override_font_sizes/font_size = 36
 text = ">"
 
+[connection signal="pressed" from="HBoxContainer/NinePatchRect/VBoxContainer/Attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="HBoxContainer/NinePatchRect/VBoxContainer/Run" to="." method="_on_run_pressed"]
