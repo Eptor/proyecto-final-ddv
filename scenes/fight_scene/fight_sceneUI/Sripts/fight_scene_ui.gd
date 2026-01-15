@@ -79,5 +79,5 @@ func _on_run_pressed() -> void:
 
 
 func _on_attack_pressed() -> void:
-	display_text("Se evitó el Combate")
+	display_text("% Ataco al enemigo" % enemi.name.to_upper())
 	
