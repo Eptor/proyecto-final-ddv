@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dolf3u427otsn"]
+
+[ext_resource type="Texture2D" uid="uid://cnp27n5yktk8w" path="res://assets/enemys/señor_bigote.png" id="1_olffy"]
+[ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/hp_bar/hp_bar.tscn" id="2_pb1a7"]
+
+[node name="Bot1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("1_olffy")
+flip_h = true
+
+[node name="hp_player" parent="." instance=ExtResource("2_pb1a7")]
+layout_mode = 1
+offset_left = 55.0
+offset_top = 203.0
+offset_right = 55.0
+offset_bottom = 203.08
