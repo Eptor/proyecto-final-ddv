@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://o27g6dclpgrm"]
+[gd_scene load_steps=5 format=4 uid="uid://cv1bs8yuypogf"]
 
-[ext_resource type="Texture2D" uid="uid://c8njljsavs34e" path="res://assets/tiles/tileset_brown.png" id="1_pgdo8"]
+[ext_resource type="Texture2D" uid="uid://c8njljsavs34e" path="res://assets/tiles/tileset_brown.png" id="2_mrlh4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rlboa"]
-texture = ExtResource("1_pgdo8")
+texture = ExtResource("2_mrlh4")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0

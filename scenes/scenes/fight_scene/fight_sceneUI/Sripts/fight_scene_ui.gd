@@ -1,6 +1,6 @@
 extends Control
-@export var enemi:Resource = null
-#@export var player: Resource
+@export var enemi:Resource
+
 @onready var _opciones_menu: Menu = $HBoxContainer/NinePatchRect/VBoxContainer
 
 var Life_Player =0
@@ -15,7 +15,7 @@ func _ready() -> void:
 	$"../../Bot1/bot".texture_normal =enemi.texture
 	
 	Life_Player =State.HP_Actual
-	Life_Bot =enemi.HP
+	Life_Bot =enemi.Hp
 	
 	$Notificaciones.hide()
 	$HBoxContainer/NinePatchRect.hide()
