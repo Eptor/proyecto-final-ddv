@@ -1,5 +1,5 @@
 extends Control
-@export var enemi: Resource
+@export var enemi:Resource
 
 @onready var _opciones_menu: Menu = $HBoxContainer/NinePatchRect/VBoxContainer
 

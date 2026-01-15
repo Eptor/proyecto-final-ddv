@@ -31,10 +31,11 @@ texture_normal = ExtResource("1_duruu")
 stretch_mode = 1
 flip_h = true
 
-[node name="hp_bot" parent="." instance=ExtResource("3_npdk3")]
+[node name="hp_bot" parent="bot" instance=ExtResource("3_npdk3")]
 layout_mode = 1
-offset_left = 60.0
-offset_top = 203.0
-offset_right = 60.0
-offset_bottom = 203.08
+offset_left = 299.99997
+offset_top = 1014.9999
+offset_right = 320.19995
+offset_bottom = 1015.07983
+scale = Vector2(5, 5)
 theme = SubResource("Theme_npdk3")
