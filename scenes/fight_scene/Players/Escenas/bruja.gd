@@ -1,4 +1,4 @@
-class_name Guerrero  
+class_name Bruja  
 extends CharacterBody2D
 
 @onready var anim_attack: AnimationPlayer = $AnimationAttack

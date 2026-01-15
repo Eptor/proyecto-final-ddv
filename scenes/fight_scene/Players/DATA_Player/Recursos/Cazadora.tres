@@ -5,7 +5,6 @@
 
 [resource]
 script = ExtResource("1_cwy3x")
-name = "Czadora"
+name = "Cazadora"
 texture = ExtResource("2_vj7tm")
-HP = 35
 damage = 10

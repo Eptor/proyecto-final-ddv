@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bpyj4hki5kg8h"]
+[gd_scene load_steps=14 format=3 uid="uid://cj2runbatntrk"]
 
-[ext_resource type="Texture2D" uid="uid://dvyssqy10pgoj" path="res://assets/characters/EspadaP.png" id="1_3ixb8"]
-[ext_resource type="Script" uid="uid://bksncugvamwcl" path="res://scenes/fight_scene/Players/Escenas/guerrero.gd" id="1_450ma"]
-[ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/hp_bar/hp_bar.tscn" id="3_1q4hi"]
+[ext_resource type="Script" uid="uid://c8x4hkw2n3ygt" path="res://scenes/fight_scene/Players/Escenas/bruja.gd" id="1_ouo6d"]
+[ext_resource type="Texture2D" uid="uid://crvl7dc5vlxdv" path="res://assets/characters/BrujaL.png" id="2_ouo6d"]
+[ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/hp_bar/hp_bar.tscn" id="3_5dvi0"]
 
 [sub_resource type="Animation" id="Animation_rg5rd"]
 length = 0.001
@@ -117,13 +117,13 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_450ma"]
 size = Vector2(124.75, 129.5)
 
-[node name="Guerrero" type="CharacterBody2D"]
-script = ExtResource("1_450ma")
+[node name="Bruja" type="CharacterBody2D"]
+script = ExtResource("1_ouo6d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(54.299988, 60.799984)
 scale = Vector2(0.100976594, 0.115625024)
-texture = ExtResource("1_3ixb8")
+texture = ExtResource("2_ouo6d")
 
 [node name="AnimationAttack" type="AnimationPlayer" parent="."]
 libraries = {
@@ -144,7 +144,7 @@ libraries = {
 position = Vector2(60.625, 66.25)
 shape = SubResource("RectangleShape2D_450ma")
 
-[node name="hp_player" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_1q4hi")]
+[node name="hp_player" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_5dvi0")]
 offset_left = 13.0
 offset_top = 134.0
 offset_right = 109.0
