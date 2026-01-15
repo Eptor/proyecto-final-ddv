@@ -1,8 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6l8hs0ffh2ig"]
 
 [ext_resource type="Texture2D" uid="uid://cnp27n5yktk8w" path="res://assets/enemys/señor_bigote.png" id="1_duruu"]
-[ext_resource type="Script" path="res://scenes/fight_scene/BOTS/bot_1.gd" id="1_npdk3"]
 [ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/hp_bar/hp_bar.tscn" id="3_npdk3"]
+
+[sub_resource type="GDScript" id="GDScript_gcubj"]
+script/source = "class_name Bot1 extends Control
+@onready var _bot_menu: TextureButton = get_node(\"bot\")
+
+func activar_seleccion_bot() -> void:
+	_bot_menu.button_focus_en_nombre(\"Bot\")
+"
 
 [sub_resource type="Theme" id="Theme_npdk3"]
 
@@ -13,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_npdk3")
+script = SubResource("GDScript_gcubj")
 
 [node name="bot" type="TextureButton" parent="."]
 layout_mode = 0
