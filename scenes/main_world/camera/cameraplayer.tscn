@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy5q728mte7y0"]
+
+[ext_resource type="Script" uid="uid://hbkpuprvxwlg" path="res://scenes/main_world/scripts/cameraplayer.gd" id="1_br0nb"]
+
+[node name="Cameraplayer" type="Camera2D"]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_bottom = 740
+script = ExtResource("1_br0nb")
