@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
+<<<<<<< HEAD
 class_name Player
 
 @onready var sprite: Sprite2D = $Sprite2D
 var MOVEMENT_SPEED: float=75.0
+@onready var sprite: Sprite2D = $Sprite2D
+var MOVEMENT_SPEED: float=100.0
 
 func _physics_process(delta: float) -> void:
 	get_input(delta)

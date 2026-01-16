@@ -14,6 +14,7 @@ config/name="proyecto-final-ddv"
 run/main_scene="uid://dwo4beohwxjw6"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="uid://dyq3lc373m60c"
+<<<<<<<Updatedupstream<<<<<<<Updatedupstreamrun/main_scene="uid://cv1bs8yuypogf"
 
 [autoload]
 

@@ -10,22 +10,37 @@ size = Vector2(8, 5)
 size = Vector2(10, 19)
 
 [node name="Playeroverworld" type="CharacterBody2D"]
+<<<<<<< HEAD
 y_sort_enabled = true
+=======
+>>>>>>> 4999942d99b5f43ec72dd8b5ccf659548e3a68be
 collision_mask = 7
 script = ExtResource("1_d5q7o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+<<<<<<< HEAD
+=======
+position = Vector2(10, 11)
+>>>>>>> 4999942d99b5f43ec72dd8b5ccf659548e3a68be
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("1_5giks")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 4
+<<<<<<< HEAD
 position = Vector2(1, 7)
+=======
+position = Vector2(11, 18.5)
+>>>>>>> 4999942d99b5f43ec72dd8b5ccf659548e3a68be
 shape = SubResource("RectangleShape2D_d5q7o")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 visibility_layer = 2
+<<<<<<< HEAD
+=======
+position = Vector2(11, 11.5)
+>>>>>>> 4999942d99b5f43ec72dd8b5ccf659548e3a68be
 shape = SubResource("RectangleShape2D_tcbpf")
 debug_color = Color(6.256998e-07, 0.64279395, 0.3169709, 0.41960785)
