@@ -1,14 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://o27g6dclpgrm"]
+[gd_scene load_steps=11 format=3 uid="uid://o27g6dclpgrm"]
 
 [ext_resource type="PackedScene" uid="uid://bh00vhv172x5w" path="res://scenes/fight_scene/Fondo/Fondo.tscn" id="1_pf6vi"]
+[ext_resource type="Script" uid="uid://bhme3vju37qsg" path="res://scenes/fight_scene/Audio.gd" id="1_vp5g2"]
 [ext_resource type="PackedScene" uid="uid://b1rwxu3jng2ef" path="res://scenes/fight_scene/fight_sceneUI/fight_sceneUI.tscn" id="2_6drue"]
 [ext_resource type="PackedScene" uid="uid://b6l8hs0ffh2ig" path="res://scenes/fight_scene/BOTS/Bot-1.tscn" id="3_ayqed"]
 [ext_resource type="PackedScene" uid="uid://bpyj4hki5kg8h" path="res://scenes/fight_scene/Players/Escenas/Guerrero.tscn" id="4_ayqed"]
 [ext_resource type="PackedScene" uid="uid://cj2runbatntrk" path="res://scenes/fight_scene/Players/Escenas/Bruja.tscn" id="5_885g1"]
 [ext_resource type="PackedScene" uid="uid://b6fw8b23p0fsw" path="res://scenes/fight_scene/Players/Escenas/Cazadora.tscn" id="6_gnakn"]
 [ext_resource type="PackedScene" uid="uid://0p2pncmxfh0p" path="res://scenes/fight_scene/Players/Escenas/Bardo.tscn" id="7_vp5g2"]
+[ext_resource type="AudioStream" uid="uid://sa5cm0mpxlof" path="res://assets/Sounds/Level-1 (1).mp3" id="9_a5mk7"]
+[ext_resource type="AudioStream" uid="uid://cgeipf4k2ko17" path="res://assets/Sounds/Dead-Sound (1).mp3" id="10_a5mk7"]
 
 [node name="FightScene" type="Node2D"]
+script = ExtResource("1_vp5g2")
 
 [node name="Fondo" parent="." instance=ExtResource("1_pf6vi")]
 
@@ -36,3 +40,9 @@ position = Vector2(917, 307)
 
 [node name="Bardo" parent="." instance=ExtResource("7_vp5g2")]
 position = Vector2(1069, 306)
+
+[node name="Musica_fondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_a5mk7")
+
+[node name="Dead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_a5mk7")

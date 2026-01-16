@@ -8,7 +8,7 @@ extends Control
 var game_over = String("res://scenes/game_over/game_over.tscn")
 var victory = String("res://scenes/victory/victory.tscn")
 
-
+@onready var sound =$"../../Dead"
 @onready var _opciones_menu: BossMenu = $BossContainer/NinePatchRect/VBoxContainer
 #Aqui cambiar para iniciar luego de chocar con el jefe
 #var main_level_scene = preload("res://scenes/main_world/main_world.tscn")
@@ -200,6 +200,7 @@ func enemy_turn() -> void:
 			var anim_death: AnimationPlayer = nodo.get_node("AnimationDeath")
 			if anim_death:
 				anim_death.play("death")
+				sound.play()
 
 	# Avanzar turno
 	turn_index = (turn_index + 1) % party_order.size()

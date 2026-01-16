@@ -4,6 +4,7 @@ extends Control
 @export var Bruja: PartyData
 @export var Cazadora: PartyData
 @export var Bardo: PartyData
+@onready var sond =$"../../Dead"
 
 
 @onready var _opciones_menu: Menu = $HBoxContainer/NinePatchRect/VBoxContainer
@@ -261,6 +262,7 @@ func enemy_turn() -> void:
 			var anim_death: AnimationPlayer = nodo.get_node("AnimationDeath")
 			if anim_death:
 				anim_death.play("death")
+				sond.play()
 
 	# Avanzar turno
 	turn_index = (turn_index + 1) % party_order.size()
@@ -340,6 +342,7 @@ func _on_potion_purple_pressed() -> void:
 		var anim_enemy_damage: AnimationPlayer = bot.get_node_or_null("AnimationDamage")
 		if anim_enemy_damage:
 			anim_enemy_damage.play("damage")
+			sond.play()
 	
 	await get_tree().create_timer(1.0).timeout
 	enemy_turn()
