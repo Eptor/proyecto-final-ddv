@@ -6,7 +6,7 @@ var money: int = 0
 var store_items: Array = [
 	{"name": "Salud Pequeña", "price": 50, "quantity": 10, "heal": 20},
 	{"name": "Salud Grande", "price": 100, "quantity": 5, "heal": 50},
-	{"name": "Poción de Daño", "price": 150, "quantity": 4, "damage": 75},
+	{"name": "Poción de Daño", "price": 150, "quantity": 4, "damage": 10},
 ]
 
 
@@ -63,3 +63,29 @@ func print_inventory() -> void:
 
 func get_inventory_list() -> Dictionary:
 	return inventory.duplicate()
+
+
+func use_potion(item_name: String) -> Dictionary:
+	var heal_amount = 0
+	var damage_amount = 0
+	for item in store_items:
+		if item["name"] == item_name:
+			heal_amount = item.get("heal", 0)
+			damage_amount = item.get("damage", 0)
+			break
+	
+	if heal_amount == 0 and damage_amount == 0:
+		print("✗ No se puede usar este item")
+		return {"success": false, "heal": 0, "damage": 0}
+	
+	if not remove_item(item_name, 1):
+		return {"success": false, "heal": 0, "damage": 0}
+	
+	var result = {"success": true, "heal": heal_amount, "damage": damage_amount}
+	
+	if heal_amount > 0:
+		print("✓ Usaste %s y recuperaste %d de vida" % [item_name, heal_amount])
+	elif damage_amount > 0:
+		print("✓ Usaste %s causando %d de daño al enemigo" % [item_name, damage_amount])
+	
+	return result

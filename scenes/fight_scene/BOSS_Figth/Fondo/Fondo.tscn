@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4lr7cm8mtdn"]
+
+[ext_resource type="Texture2D" uid="uid://cforl3iotidyr" path="res://assets/UI/backgrounds/fight_scenes/JEFE1.png" id="1_5gl1j"]
+
+[node name="Fondo" type="TextureRect"]
+offset_right = 2572.0
+offset_bottom = 1268.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_5gl1j")

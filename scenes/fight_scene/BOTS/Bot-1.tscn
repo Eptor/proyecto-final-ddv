@@ -1,17 +1,157 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6l8hs0ffh2ig"]
+[gd_scene load_steps=14 format=3 uid="uid://b6l8hs0ffh2ig"]
 
 [ext_resource type="Texture2D" uid="uid://cnp27n5yktk8w" path="res://assets/enemys/señor_bigote.png" id="1_duruu"]
 [ext_resource type="PackedScene" uid="uid://cb0vcqrabnc4x" path="res://scenes/hp_bar/hp_bar.tscn" id="3_npdk3"]
 
 [sub_resource type="GDScript" id="GDScript_gcubj"]
-script/source = "class_name Bot1 extends Control
-@onready var _bot_menu: TextureButton = get_node(\"bot\")
+script/source = "class_name Bot1
+extends Control
+
+@onready var boton: TextureButton = $bot
+@onready var anim_attack: AnimationPlayer = $AnimationEnemyAttack
+@onready var anim_damage: AnimationPlayer = $AnimationEnemyDamage
+@onready var anim_death: AnimationPlayer = $AnimationEnemyDeath
+
+signal attack_finished
+signal death_finished
+
+var is_dead := false
 
 func activar_seleccion_bot() -> void:
-	_bot_menu.button_focus_en_nombre(\"Bot\")
+	boton.grab_focus()
+
+func attack() -> void:
+	if is_dead:
+		return
+	anim_attack.play(\"enemy_attack\")
+	await anim_attack.animation_finished
+	emit_signal(\"attack_finished\")
+
+func hurt() -> void:
+	print(\"Animación de daño ENEMIGO\")
+	if is_dead:
+		return
+	anim_damage.play(\"enemy_damage\")
+
+func die() -> void:
+	if is_dead:
+		return
+	is_dead = true
+	anim_death.play(\"enemy_death\")
+	boton.disabled = true
 "
 
 [sub_resource type="Theme" id="Theme_npdk3"]
+
+[sub_resource type="Animation" id="Animation_npdk3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gcubj"]
+resource_name = "enemy_attack"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ubgs1"]
+_data = {
+&"RESET": SubResource("Animation_npdk3"),
+&"enemy_attack": SubResource("Animation_gcubj")
+}
+
+[sub_resource type="Animation" id="Animation_m3s6h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bot:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yb5mw"]
+resource_name = "enemy_damage"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bot:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vuc3a"]
+_data = {
+&"RESET": SubResource("Animation_m3s6h"),
+&"enemy_damage": SubResource("Animation_yb5mw")
+}
+
+[sub_resource type="Animation" id="Animation_502sr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1g7vr"]
+resource_name = "enemy_death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.50980395), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iqcwk"]
+_data = {
+&"RESET": SubResource("Animation_502sr"),
+&"enemy_death": SubResource("Animation_1g7vr")
+}
 
 [node name="Bot1" type="Control"]
 layout_mode = 3
@@ -39,3 +179,19 @@ offset_right = 320.19995
 offset_bottom = 1015.07983
 scale = Vector2(5, 5)
 theme = SubResource("Theme_npdk3")
+
+[node name="AnimationEnemyAttack" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ubgs1")
+}
+
+[node name="AnimationEnemyDamage" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vuc3a")
+}
+
+[node name="AnimationEnemyDeath" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimationEnemyDamage")
+libraries = {
+&"": SubResource("AnimationLibrary_iqcwk")
+}

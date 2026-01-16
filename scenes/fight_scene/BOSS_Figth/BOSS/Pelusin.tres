@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BOSS" load_steps=3 format=3 uid="uid://c06dn6ulc3rwp"]
+
+[ext_resource type="Script" uid="uid://do8cdelycpdww" path="res://scenes/fight_scene/BOSS_Figth/BOSS/BOSS_HP.gd" id="1_1v871"]
+[ext_resource type="Texture2D" uid="uid://2ivxmw4v3lvt" path="res://assets/enemys/pelusin.png" id="2_tei8n"]
+
+[resource]
+script = ExtResource("1_1v871")
+texture = ExtResource("2_tei8n")
+HP = 120
+damage = 25

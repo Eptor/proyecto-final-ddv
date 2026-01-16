@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bj83pi4ksxawi"]
+
+[ext_resource type="Script" uid="uid://bwf3ffmb2algb" path="res://scenes/main_world/scripts/playeroverworld.gd" id="1_vyu54"]
+[ext_resource type="Texture2D" uid="uid://dvyssqy10pgoj" path="res://assets/characters/EspadaP.png" id="2_pt5m6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5q7o"]
+size = Vector2(8, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcbpf"]
+size = Vector2(10, 19)
+
+[node name="Playeroverworld" type="CharacterBody2D"]
+y_sort_enabled = true
+collision_mask = 7
+script = ExtResource("1_vyu54")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_pt5m6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 4
+position = Vector2(1, 7)
+shape = SubResource("RectangleShape2D_d5q7o")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visibility_layer = 2
+shape = SubResource("RectangleShape2D_tcbpf")
+debug_color = Color(6.256998e-07, 0.64279395, 0.3169709, 0.41960785)

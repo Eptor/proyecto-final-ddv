@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvb5phox5aktf"]
+
+[ext_resource type="Texture2D" uid="uid://2ivxmw4v3lvt" path="res://assets/enemys/pelusin.png" id="1_qtfqd"]
+[ext_resource type="Script" uid="uid://xdydtau053f4" path="res://scenes/main_world/scripts/np_ccholo.gd" id="1_wq1vr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wq1vr"]
+size = Vector2(13, 6.5)
+
+[node name="NpCcholo" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_wq1vr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_qtfqd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 11.25)
+shape = SubResource("RectangleShape2D_wq1vr")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-15, 0)
+collision_mask = 5
+collide_with_areas = true

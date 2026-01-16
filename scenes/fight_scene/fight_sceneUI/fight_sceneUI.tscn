@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b1rwxu3jng2ef"]
+[gd_scene load_steps=24 format=3 uid="uid://b1rwxu3jng2ef"]
 
 [ext_resource type="Texture2D" uid="uid://bhjkwkrswdmkj" path="res://assets/UI/fight_UI/ninepatch_default_blackt.png" id="1_ka4eu"]
 [ext_resource type="Script" uid="uid://e3m6lq7srnps" path="res://scenes/fight_scene/fight_sceneUI/Sripts/fight_scene_ui.gd" id="1_y8u5u"]
@@ -11,11 +11,24 @@
 [ext_resource type="Script" uid="uid://bo2lyxu03hcpd" path="res://scenes/fight_scene/fight_sceneUI/Sripts/Cursor.gd" id="5_xretv"]
 [ext_resource type="Resource" uid="uid://cnv7rhetrddxm" path="res://scenes/fight_scene/Players/DATA_Player/Recursos/Bardo.tres" id="6_p35ek"]
 [ext_resource type="PackedScene" uid="uid://df0w3twroh4ic" path="res://scenes/fight_scene/fight_sceneUI/Taco.tscn" id="6_xretv"]
+[ext_resource type="Texture2D" uid="uid://dnnp13hcs1cob" path="res://assets/UI/icons/bottles/Icon1.png" id="11_lve0q"]
+[ext_resource type="Texture2D" uid="uid://cu4323jgibu8c" path="res://assets/UI/icons/bottles/Icon2.png" id="12_erwtj"]
+[ext_resource type="Texture2D" uid="uid://b7jwjtl4b7dxw" path="res://assets/UI/icons/bottles/Icon11.png" id="13_t3rfu"]
+[ext_resource type="Texture2D" uid="uid://dvyssqy10pgoj" path="res://assets/characters/EspadaP.png" id="14_31jlm"]
+[ext_resource type="Texture2D" uid="uid://crvl7dc5vlxdv" path="res://assets/characters/BrujaL.png" id="15_45wdb"]
+[ext_resource type="Texture2D" uid="uid://tyly7ufqmfdh" path="res://assets/characters/CazadoraM.png" id="16_36kjw"]
+[ext_resource type="Texture2D" uid="uid://d2ma55rmt7fb4" path="res://assets/characters/GuitarraL.png" id="17_1vnj1"]
 
 [sub_resource type="Theme" id="Theme_ka4eu"]
 
 [sub_resource type="Theme" id="Theme_y8u5u"]
 default_font = ExtResource("2_nctq4")
+
+[sub_resource type="LabelSettings" id="LabelSettings_i88kj"]
+font = ExtResource("2_nctq4")
+font_size = 25
+
+[sub_resource type="Theme" id="Theme_ihi3o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xretv"]
 bg_color = Color(0.03839716, 0.038397174, 0.038397126, 1)
@@ -107,12 +120,177 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/NinePatchRect2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 801.0
+offset_bottom = 188.0
+theme_override_constants/separation = 26
+
+[node name="jugador1Label" type="Label" parent="HBoxContainer/NinePatchRect2/VBoxContainer"]
+layout_mode = 2
+text = "Espada HP: 100 "
+label_settings = SubResource("LabelSettings_i88kj")
+
+[node name="jugador2Label" type="Label" parent="HBoxContainer/NinePatchRect2/VBoxContainer"]
+layout_mode = 2
+text = "Bruja 			   HP: 100 "
+label_settings = SubResource("LabelSettings_i88kj")
+
+[node name="jugador3Label" type="Label" parent="HBoxContainer/NinePatchRect2/VBoxContainer"]
+layout_mode = 2
+text = "Cazadora HP: 100 "
+label_settings = SubResource("LabelSettings_i88kj")
+
+[node name="jugador4Label" type="Label" parent="HBoxContainer/NinePatchRect2/VBoxContainer"]
+layout_mode = 2
+text = "Bardo    HP: 100 "
+label_settings = SubResource("LabelSettings_i88kj")
+
+[node name="HBoxContainer" type="BoxContainer" parent="HBoxContainer/NinePatchRect2"]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 390.0
+offset_bottom = 145.0
+theme = SubResource("Theme_ihi3o")
+theme_override_constants/separation = 20
+
+[node name="potion_red" type="Button" parent="HBoxContainer/NinePatchRect2/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+text = " Salud Pequeña "
+icon = ExtResource("11_lve0q")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/NinePatchRect2/HBoxContainer/potion_red"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.257
+anchor_top = 0.72400004
+anchor_right = 0.71300006
+anchor_bottom = 0.9760001
+offset_left = 0.042999268
+offset_top = 0.051994324
+offset_right = -0.013008118
+offset_bottom = 0.04798889
+text = "x 0"
+horizontal_alignment = 1
+
+[node name="potion_yellow" type="Button" parent="HBoxContainer/NinePatchRect2/HBoxContainer"]
+layout_mode = 2
+text = " Salud Grande "
+icon = ExtResource("12_erwtj")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/NinePatchRect2/HBoxContainer/potion_yellow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.344
+anchor_top = 0.75600004
+anchor_right = 0.66400003
+anchor_bottom = 0.93700004
+offset_left = 0.03199768
+offset_top = -1.0120087
+offset_right = -0.008003235
+offset_bottom = 0.0009918213
+text = "x 0"
+horizontal_alignment = 1
+
+[node name="potion_purple" type="Button" parent="HBoxContainer/NinePatchRect2/HBoxContainer"]
+layout_mode = 2
+text = " Poción de Daño "
+icon = ExtResource("13_t3rfu")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/NinePatchRect2/HBoxContainer/potion_purple"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33600003
+anchor_top = 0.75600004
+anchor_right = 0.66400003
+anchor_bottom = 0.93700004
+offset_left = 0.0079956055
+offset_top = -0.012008667
+offset_right = -0.008003235
+offset_bottom = 0.0009918213
+text = "x 0"
+horizontal_alignment = 1
+
 [node name="Taco" parent="." instance=ExtResource("6_xretv")]
 layout_mode = 0
 offset_left = 99.99999
 offset_top = 523.0
 offset_right = 612.0
 offset_bottom = 1035.0
+
+[node name="curar_panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45100003
+anchor_top = 0.39000002
+anchor_right = 0.75900006
+anchor_bottom = 0.531
+offset_left = -144.28003
+offset_top = 132.19998
+offset_right = -149.52008
+offset_bottom = 131.68
+
+[node name="NinePatchRect" type="NinePatchRect" parent="curar_panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="curar_panel/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.998
+anchor_bottom = 1.0
+offset_right = -140.05402
+offset_bottom = -2.0
+
+[node name="personaje1" type="Button" parent="curar_panel/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Personaje1"
+icon = ExtResource("14_31jlm")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="personaje2" type="Button" parent="curar_panel/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Personaje2"
+icon = ExtResource("15_45wdb")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="personaje3" type="Button" parent="curar_panel/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Personaje3"
+icon = ExtResource("16_36kjw")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="personaje4" type="Button" parent="curar_panel/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Personaje4"
+icon = ExtResource("17_1vnj1")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
 
 [node name="Notificaciones" type="Panel" parent="."]
 visible = false
@@ -155,4 +333,12 @@ theme_override_font_sizes/font_size = 36
 text = ">"
 
 [connection signal="pressed" from="HBoxContainer/NinePatchRect/VBoxContainer/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="HBoxContainer/NinePatchRect/VBoxContainer/Items" to="." method="_on_items_pressed"]
 [connection signal="pressed" from="HBoxContainer/NinePatchRect/VBoxContainer/Run" to="." method="_on_run_pressed"]
+[connection signal="pressed" from="HBoxContainer/NinePatchRect2/HBoxContainer/potion_red" to="." method="_on_potion_red_pressed"]
+[connection signal="pressed" from="HBoxContainer/NinePatchRect2/HBoxContainer/potion_yellow" to="." method="_on_potion_yellow_pressed"]
+[connection signal="pressed" from="HBoxContainer/NinePatchRect2/HBoxContainer/potion_purple" to="." method="_on_potion_purple_pressed"]
+[connection signal="pressed" from="curar_panel/NinePatchRect/VBoxContainer/personaje1" to="." method="_on_personaje_1_pressed"]
+[connection signal="pressed" from="curar_panel/NinePatchRect/VBoxContainer/personaje2" to="." method="_on_personaje_2_pressed"]
+[connection signal="pressed" from="curar_panel/NinePatchRect/VBoxContainer/personaje3" to="." method="_on_personaje_3_pressed"]
+[connection signal="pressed" from="curar_panel/NinePatchRect/VBoxContainer/personaje4" to="." method="_on_personaje_4_pressed"]

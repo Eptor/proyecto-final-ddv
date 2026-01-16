@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgeipf4k2ko17"
+path="res://.godot/imported/Dead-Sound (1).mp3-5e2c59cd0045c7a80fd5296a423b0793.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/Dead-Sound (1).mp3"
+dest_files=["res://.godot/imported/Dead-Sound (1).mp3-5e2c59cd0045c7a80fd5296a423b0793.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

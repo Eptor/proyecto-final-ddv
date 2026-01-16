@@ -123,8 +123,7 @@ func use_potion(item_name: String) -> bool:
 		print("✓ Usaste %s y recuperaste %d de vida (Vida: %d/%d)" % 
 			[item_name, heal_amount, State.HP_Actual, State.HP_Max])
 	elif damage_amount > 0:
-		State.damage += damage_amount
-		print("✓ Usaste %s e incrementaste tu daño en %d" % 
+		print("✓ Usaste %s causando %d de daño al enemigo" % 
 			[item_name, damage_amount])
 	
 	return true
