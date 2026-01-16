@@ -1,14 +1,15 @@
-[gd_scene load_steps=19 format=4 uid="uid://bx3ahcygka3vg"]
+[gd_scene load_steps=20 format=4 uid="uid://bx3ahcygka3vg"]
 
 [ext_resource type="Script" uid="uid://b0cnc4i3vigjc" path="res://scenes/main_world/Boss_Wolrd/boss_world.gd" id="1_alfwd"]
-[ext_resource type="Texture2D" uid="uid://c8njljsavs34e" path="res://assets/tiles/tileset_brown.png" id="1_lttks"]
+[ext_resource type="Texture2D" uid="uid://c8njljsavs34e" path="res://scenes/main_world/Boss_Wolrd/tiles/tileset_brown.png" id="1_lttks"]
 [ext_resource type="Texture2D" uid="uid://bnh180ukkkyfo" path="res://scenes/main_world/Boss_Wolrd/tiles/preview.jpg" id="2_alfwd"]
-[ext_resource type="Texture2D" uid="uid://bunav5rd1vyqi" path="res://assets/tiles/House1.png" id="3_5g3rh"]
+[ext_resource type="Texture2D" uid="uid://bunav5rd1vyqi" path="res://scenes/main_world/Boss_Wolrd/tiles/House1.png" id="3_5g3rh"]
 [ext_resource type="Texture2D" uid="uid://bs1dlmef8ipt7" path="res://scenes/main_world/Boss_Wolrd/tiles/Monastery.png" id="4_tkt5j"]
 [ext_resource type="PackedScene" uid="uid://c8h68tg27xcem" path="res://scenes/main_world/Boss_Wolrd/player/playeroverworld.tscn" id="5_5abs0"]
 [ext_resource type="PackedScene" uid="uid://cy5q728mte7y0" path="res://scenes/main_world/Boss_Wolrd/camera/cameraplayer.tscn" id="7_di848"]
 [ext_resource type="PackedScene" uid="uid://cvb5phox5aktf" path="res://scenes/main_world/Boss_Wolrd/enemy/NPCcholo.tscn" id="8_727wu"]
 [ext_resource type="PackedScene" uid="uid://ccntlhsi8qtly" path="res://scenes/main_world/Boss_Wolrd/enemy/bossoverworld.tscn" id="8_lttks"]
+[ext_resource type="AudioStream" uid="uid://buy2ccpi66i7b" path="res://assets/Sounds/Dead-Sound/World (1).mp3" id="10_5g3rh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rlboa"]
 texture = ExtResource("1_lttks")
@@ -2264,5 +2265,8 @@ position = Vector2(583, 238)
 
 [node name="ShopExitSpawn" type="Marker2D" parent="."]
 position = Vector2(642, 196)
+
+[node name="fondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_5g3rh")
 
 [connection signal="area_entered" from="Tienda" to="." method="_on_tienda_area_entered"]

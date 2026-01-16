@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bg0fc1ehscp6m"]
+[gd_scene load_steps=9 format=3 uid="uid://bg0fc1ehscp6m"]
 
 [ext_resource type="Texture2D" uid="uid://bs7fdmjxjwgcg" path="res://assets/UI/backgrounds/ded.jpg" id="1_3j056"]
 [ext_resource type="Script" uid="uid://dg3xnho6s1cxn" path="res://scenes/game_over/game_over.gd" id="1_vtso4"]
 [ext_resource type="Texture2D" uid="uid://dio4d1bfapgcw" path="res://assets/UI/buttons/menu_button.png" id="2_anb0t"]
 [ext_resource type="FontFile" uid="uid://tybb5lh7kdw5" path="res://assets/Fonts/dragon-warrior-iv.ttf" id="3_vtso4"]
+[ext_resource type="AudioStream" uid="uid://cll4anlxnm8jb" path="res://assets/Sounds/Dead-Sound/Game-Over.mp3" id="5_p1tbv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_p1tbv"]
 font = ExtResource("3_vtso4")
@@ -101,6 +102,9 @@ theme_override_constants/line_spacing = 3
 text = "GAME OVER"
 label_settings = SubResource("LabelSettings_anb0t")
 horizontal_alignment = 1
+
+[node name="Over" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_p1tbv")
 
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/exit" to="." method="_on_exit_pressed"]

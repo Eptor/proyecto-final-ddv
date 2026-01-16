@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("1_1v871")
 texture = ExtResource("2_tei8n")
-HP = 120
+HP = 100
 damage = 25

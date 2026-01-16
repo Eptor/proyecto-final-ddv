@@ -1,8 +1,9 @@
 extends Node2D
 
 var shop_scene = String("res://scenes/store/store.tscn")
-
+@onready var w =$fondo
 func _ready() -> void:
+	w.play()
 	if GameManager.last_spawn_marker != "":
 		var marker = get_node_or_null(GameManager.last_spawn_marker)
 		if marker:
