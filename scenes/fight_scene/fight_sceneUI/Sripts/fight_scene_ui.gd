@@ -7,7 +7,8 @@ extends Control
 
 
 @onready var _opciones_menu: Menu = $HBoxContainer/NinePatchRect/VBoxContainer
-var main_level_scene = preload("res://scenes/main_world/main_world.tscn")
+var second_level_scene = String("res://scenes/main_world/Boss_Wolrd/Boss_world.tscn")
+var game_over = String("res://scenes/game_over/game_over.tscn")
 
 var potion_value : int = 0
 var personaje_a_curar: String = ""
@@ -192,6 +193,9 @@ func _on_attack_pressed() -> void:
 			var anim_enemy_death: AnimationPlayer = bot.get_node_or_null("AnimationDeath")
 			if anim_enemy_death:
 				anim_enemy_death.play("death")
+			GameManager.add_money(500)
+			await get_tree().create_timer(1.0).timeout
+			SceneChanger.fade(second_level_scene)
 		return
 
 	# Animación de daño del enemigo
@@ -205,6 +209,7 @@ func _on_attack_pressed() -> void:
 	enemy_turn()
 	if all_party_defeated():
 		display_text("¡Todos los aventureros fueron derrotados!")
+		await get_tree().create_timer(1.0).timeout
 		return
 
 	
@@ -217,6 +222,8 @@ func enemy_turn() -> void:
 
 	if vivos.is_empty():
 		display_text("¡Todos los aventureros fueron derrotados!")
+		await get_tree().create_timer(1.0).timeout
+		SceneChanger.flash_transition(game_over)
 		return
 
 	# Elegir objetivo vivo
@@ -338,6 +345,7 @@ func _on_potion_purple_pressed() -> void:
 	enemy_turn()
 	if all_party_defeated():
 		display_text("¡Todos los aventureros fueron derrotados!")
+		
 		return
 
 

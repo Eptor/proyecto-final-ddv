@@ -1,0 +1,103 @@
+[gd_scene load_steps=9 format=3 uid="uid://cqnppo00cdij0"]
+
+[ext_resource type="Texture2D" uid="uid://dio4d1bfapgcw" path="res://assets/UI/buttons/menu_button.png" id="1_6tedd"]
+[ext_resource type="Script" uid="uid://c8rxrp1useoj5" path="res://scenes/victory/victory.gd" id="1_u87pk"]
+[ext_resource type="FontFile" uid="uid://d327tn7e5layj" path="res://assets/Fonts/finalf.ttf" id="2_esff4"]
+[ext_resource type="Texture2D" uid="uid://b0jh0x064gwrp" path="res://assets/UI/backgrounds/victor.jpeg" id="2_sd6rc"]
+[ext_resource type="FontFile" uid="uid://tybb5lh7kdw5" path="res://assets/Fonts/dragon-warrior-iv.ttf" id="3_72nab"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_72nab"]
+font = ExtResource("2_esff4")
+
+[sub_resource type="LabelSettings" id="LabelSettings_esff4"]
+font = ExtResource("2_esff4")
+
+[sub_resource type="LabelSettings" id="LabelSettings_u87pk"]
+font = ExtResource("3_72nab")
+font_size = 100
+font_color = Color(0.2627451, 1, 0.10980392, 1)
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Victory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_u87pk")
+
+[node name="CanvasGroup" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasGroup"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sd6rc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup"]
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = -0.05
+anchor_right = 0.35
+offset_left = -8.0
+offset_top = 450.0
+offset_right = 222.0
+offset_bottom = 516.0
+scale = Vector2(2, 2)
+
+[node name="main" type="Button" parent="CanvasGroup/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_6tedd")
+flat = true
+
+[node name="Label" type="Label" parent="CanvasGroup/HBoxContainer/main"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "CONTINUE"
+label_settings = SubResource("LabelSettings_72nab")
+horizontal_alignment = 1
+
+[node name="exit" type="Button" parent="CanvasGroup/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_6tedd")
+flat = true
+
+[node name="Label" type="Label" parent="CanvasGroup/HBoxContainer/exit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "EXIT"
+label_settings = SubResource("LabelSettings_esff4")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasGroup"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 100.0
+offset_bottom = 200.0
+grow_horizontal = 2
+text = "VICTORY!"
+label_settings = SubResource("LabelSettings_u87pk")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CanvasGroup/HBoxContainer/main" to="." method="_on_main_pressed"]
+[connection signal="pressed" from="CanvasGroup/HBoxContainer/exit" to="." method="_on_exit_pressed"]

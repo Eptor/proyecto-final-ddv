@@ -99,7 +99,8 @@ func sell_item(item_name: String, quantity: int) -> bool:
 
 func _on_exit_pressed() -> void:
 	print("Saliendo de la tienda...")
-	get_tree().change_scene_to_packed(fight_scene)
+	#get_tree().change_scene_to_packed(fight_scene)
+	SceneChanger.zoom_fade(GameManager.last_overworld_scene)
 
 
 func use_potion(item_name: String) -> bool:

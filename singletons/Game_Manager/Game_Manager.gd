@@ -9,6 +9,8 @@ var store_items: Array = [
 	{"name": "Poción de Daño", "price": 150, "quantity": 4, "damage": 10},
 ]
 
+var last_overworld_scene: String = ""
+var last_spawn_marker: String = ""
 
 func _ready() -> void:
 	money = 500

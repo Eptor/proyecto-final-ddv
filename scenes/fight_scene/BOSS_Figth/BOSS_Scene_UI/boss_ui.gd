@@ -5,6 +5,9 @@ extends Control
 @export var Cazadora: PartyData
 @export var Bardo: PartyData
 
+var game_over = String("res://scenes/game_over/game_over.tscn")
+var victory = String("res://scenes/victory/victory.tscn")
+
 
 @onready var _opciones_menu: BossMenu = $BossContainer/NinePatchRect/VBoxContainer
 #Aqui cambiar para iniciar luego de chocar con el jefe
@@ -158,6 +161,8 @@ func enemy_turn() -> void:
 
 	if vivos.is_empty():
 		display_text("¡Todos los aventureros fueron derrotados!")
+		await get_tree().create_timer(1.0).timeout
+		SceneChanger.flash_transition(game_over)
 		return
 
 	# Elegir objetivo vivo
@@ -245,6 +250,8 @@ func _on_attack_pressed() -> void:
 			var anim_enemy_death: AnimationPlayer = bot.get_node_or_null("AnimationDeath")
 			if anim_enemy_death:
 				anim_enemy_death.play("death")
+			await get_tree().create_timer(1.0).timeout
+			SceneChanger.flash_transition(victory)
 		return
 
 	# Animación de daño del enemigo
@@ -258,6 +265,8 @@ func _on_attack_pressed() -> void:
 	enemy_turn()
 	if all_party_defeated():
 		display_text("¡Todos los aventureros fueron derrotados!")
+		await get_tree().create_timer(1.0).timeout
+		SceneChanger.flash_transition(game_over)
 		return
 
 

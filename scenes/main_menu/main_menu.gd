@@ -1,13 +1,13 @@
 extends Control
 
-var main_level_scene = preload("res://scenes/main_world/main_world.tscn")
-var Battle_scene = preload("res://scenes/fight_scene/fight_scene.tscn")
-
-func _ready() -> void:
-	pass
+var main_level_scene = String("res://scenes/main_world/main_world.tscn")
+var credits_scene = String("res://scenes/credits/credits.tscn")
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_packed(Battle_scene)
+	SceneChanger.fade(main_level_scene)
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
+
+func _on_credits_pressed() -> void:
+	SceneChanger.wipe_left_to_right(credits_scene)

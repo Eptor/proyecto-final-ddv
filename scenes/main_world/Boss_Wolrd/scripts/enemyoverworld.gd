@@ -2,6 +2,7 @@ extends CharacterBody2D  # Godot 4
 
 @export var speed := 50
 var direction := -1  # empieza hacia la izquierda
+var battle_scene = String("res://scenes/fight_scene/fight_scene.tscn")
 
 @onready var raycast := $WallDetector
 @onready var sprite := $Sprite2D
@@ -24,4 +25,4 @@ func turn_around():
 	sprite.flip_h = !sprite.flip_h
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
+	SceneChanger.flash_transition(battle_scene)
