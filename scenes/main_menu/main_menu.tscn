@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwo4beohwxjw6"]
+[gd_scene load_steps=9 format=3 uid="uid://dwo4beohwxjw6"]
 
 [ext_resource type="Texture2D" uid="uid://c1in1ff1cyxch" path="res://assets/UI/backgrounds/main_menu/bg_mainmenu_alt.png" id="1_0ebjn"]
 [ext_resource type="Script" uid="uid://t172iqwgpng2" path="res://scenes/main_menu/main_menu.gd" id="1_uqeha"]
 [ext_resource type="FontFile" uid="uid://d327tn7e5layj" path="res://assets/Fonts/finalf.ttf" id="2_0ebjn"]
 [ext_resource type="Texture2D" uid="uid://dio4d1bfapgcw" path="res://assets/UI/buttons/menu_button.png" id="3_ob46e"]
+[ext_resource type="AudioStream" uid="uid://coyqyqfwo886n" path="res://assets/Sounds/Bus-Sound-Effects.mp3" id="5_wem23"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ob46e"]
 font = ExtResource("2_0ebjn")
@@ -111,6 +112,9 @@ offset_bottom = 43.166664
 text = "EXIT"
 label_settings = SubResource("LabelSettings_wem23")
 horizontal_alignment = 1
+
+[node name="Star" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_wem23")
 
 [connection signal="pressed" from="area_botones/start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="area_botones/credits" to="." method="_on_credits_pressed"]
