@@ -25,6 +25,7 @@ var victory = String("res://scenes/victory/victory.tscn")
 
 var potion_value : int = 0
 var personaje_a_curar: String = ""
+var item_actual: String = ""
 var party_nodes := {} 
 var Life_Player =0
 var Life_Bot =0
@@ -136,18 +137,34 @@ func _on_run_pressed() -> void:
 
 
 func _on_items_pressed() -> void:
-	
 	var inventory = GameManager.get_inventory_list()
 	if inventory.is_empty():
 		display_text("No tienes items")
 		vbox_container.visible = !vbox_container.visible
 		hbox_container.visible = !hbox_container.visible
 	else:
-		#var items_text = "Inventario:\n"
-		#for item_name in inventory.keys():
-			#items_text += "• %s x%d\n" % [item_name, inventory[item_name]]
-		#display_text(items_text)
+		# Actualizar los labels de los items con las cantidades del inventario
+		update_items_display(inventory)
 		vbox_container.visible = !vbox_container.visible
+		hbox_container.visible = !hbox_container.visible
+
+func update_items_display(inventory: Dictionary) -> void:
+	# Obtener referencias a los botones y sus labels
+	var potion_red = hbox_container.get_node_or_null("potion_red")
+	var potion_yellow = hbox_container.get_node_or_null("potion_yellow")
+	var potion_purple = hbox_container.get_node_or_null("potion_purple")
+	
+	if potion_red and potion_red.has_node("Label"):
+		var quantity = GameManager.get_item_quantity("Salud Pequeña")
+		potion_red.get_node("Label").text = "x %d" % quantity
+	
+	if potion_yellow and potion_yellow.has_node("Label"):
+		var quantity = GameManager.get_item_quantity("Salud Grande")
+		potion_yellow.get_node("Label").text = "x %d" % quantity
+	
+	if potion_purple and potion_purple.has_node("Label"):
+		var quantity = GameManager.get_item_quantity("Poción de Daño")
+		potion_purple.get_node("Label").text = "x %d" % quantity
 	
 var jugador1 : PartyData
 	
@@ -271,16 +288,67 @@ func _on_attack_pressed() -> void:
 
 
 func _on_potion_red_pressed() -> void:
-	potion_value = 10 
+	var result = GameManager.use_potion("Salud Pequeña")
+	
+	if not result["success"]:
+		display_text("No tienes más Salud Pequeña")
+		return
+	
+	potion_value = result["heal"]
+	item_actual = "Salud Pequeña"
 	health_container.visible = true
 
 func _on_potion_yellow_pressed() -> void:
-	potion_value = 25
+	var result = GameManager.use_potion("Salud Grande")
+	
+	if not result["success"]:
+		display_text("No tienes más Salud Grande")
+		return
+	
+	potion_value = result["heal"]
+	item_actual = "Salud Grande"
 	health_container.visible = true
 
 func _on_potion_purple_pressed() -> void:
-	potion_value = 50 
-	health_container.visible = true
+	var result = GameManager.use_potion("Poción de Daño")
+	
+	if not result["success"]:
+		display_text("No tienes más Poción de Daño")
+		return
+	
+	# Aplicar daño al enemigo
+	vida_bot -= result["damage"]
+	if vida_bot < 0:
+		vida_bot = 0
+	set_HP($"../../Bot2/Pelusin/hp_Boss", vida_bot, Bos.HP)
+	
+	display_text("¡Usaste Poción de Daño! El enemigo recibió %d de daño" % result["damage"])
+	
+	if vida_bot == 0:
+		display_text("¡%s fue derrotado!" % Bos.name.to_upper())
+		var bot = get_node_or_null("../../Bot2")
+		if bot:
+			var anim_enemy_death: AnimationPlayer = bot.get_node_or_null("AnimationDeath")
+			if anim_enemy_death:
+				anim_enemy_death.play("death")
+			await get_tree().create_timer(1.0).timeout
+			SceneChanger.flash_transition(victory)
+		return
+	
+	# Animación de daño del enemigo
+	var bot = get_node_or_null("../../Bot2")
+	if bot:
+		var anim_enemy_damage: AnimationPlayer = bot.get_node_or_null("AnimationDamage")
+		if anim_enemy_damage:
+			anim_enemy_damage.play("damage")
+	
+	await get_tree().create_timer(1.0).timeout
+	enemy_turn()
+	if all_party_defeated():
+		display_text("¡Todos los aventureros fueron derrotados!")
+		await get_tree().create_timer(1.0).timeout
+		SceneChanger.flash_transition(game_over)
+		return
 
 
 func _on_personaje_1_pressed() -> void:
@@ -332,8 +400,12 @@ func curar_jugador() -> void:
 		set_HP(barra, vida_nueva, personaje.HP)
 		
 	actualizar_labels_hp()
-	# Resetear la variable
+	display_text("%s usó %s y recuperó %d de vida" % [personaje_a_curar, item_actual, potion_value])
+	
+	# Resetear las variables
 	personaje_a_curar = ""
+	item_actual = ""
+	potion_value = 0
 
 # Función para actualizar los labels de HP
 func actualizar_labels_hp() -> void:
