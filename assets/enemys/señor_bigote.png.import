@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfuw0c5ykk0ho"
-path="res://.godot/imported/señor_bigote.png-a237c66412d283989063077dc97f9c37.ctex"
+path="res://.godot/imported/señor_bigote.png-76738f3dc3c5e57b6a955eb672dce3fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemys/señor_bigote.png"
-dest_files=["res://.godot/imported/señor_bigote.png-a237c66412d283989063077dc97f9c37.ctex"]
+source_file="res://assets/enemys/señor_bigote.png"
+dest_files=["res://.godot/imported/señor_bigote.png-76738f3dc3c5e57b6a955eb672dce3fd.ctex"]
 
 [params]
 

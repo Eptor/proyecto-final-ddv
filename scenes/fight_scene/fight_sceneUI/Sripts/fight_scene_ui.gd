@@ -79,6 +79,7 @@ func _ready() -> void:
 		"Cazadora": Cazadora.HP,
 		"Bardo": Bardo.HP
 	}
+	actualizar_labels_hp()
 	
 
 func set_HP(progress_bar,HP_Actual,HP_Max):
