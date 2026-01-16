@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfmnbivq0luv5"]
-
-[ext_resource type="Script" uid="uid://cdm10jvqqp8da" path="res://scenes/fight_scene/BOTS/hp_bot.gd" id="1_yvqxc"]
-
-[node name="HpBot" type="ProgressBar"]
-script = ExtResource("1_yvqxc")
