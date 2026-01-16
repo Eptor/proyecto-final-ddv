@@ -1,0 +1,158 @@
+[gd_scene load_steps=15 format=3 uid="uid://b1rwxu3jng2ef"]
+
+[ext_resource type="Texture2D" uid="uid://bhjkwkrswdmkj" path="res://assets/UI/fight_UI/ninepatch_default_blackt.png" id="1_ka4eu"]
+[ext_resource type="Script" uid="uid://e3m6lq7srnps" path="res://scenes/fight_scene/fight_sceneUI/Sripts/fight_scene_ui.gd" id="1_y8u5u"]
+[ext_resource type="Resource" uid="uid://8urtlf6qurgl" path="res://scenes/fight_scene/BOTS/GODIN.tres" id="2_gl07w"]
+[ext_resource type="FontFile" uid="uid://tybb5lh7kdw5" path="res://assets/Fonts/dragon-warrior-iv.ttf" id="2_nctq4"]
+[ext_resource type="Resource" uid="uid://cbjnuess7p7pk" path="res://scenes/fight_scene/Players/DATA_Player/Recursos/Espada.tres" id="3_2ysav"]
+[ext_resource type="Resource" uid="uid://cj5kwmpha2k45" path="res://scenes/fight_scene/Players/DATA_Player/Recursos/Bruja.tres" id="4_rxvcw"]
+[ext_resource type="Script" uid="uid://d3kmjulrjx2rq" path="res://scenes/fight_scene/fight_sceneUI/Sripts/nine_patch_rect.gd" id="4_xretv"]
+[ext_resource type="Resource" uid="uid://b281a1las06jc" path="res://scenes/fight_scene/Players/DATA_Player/Recursos/Cazadora.tres" id="5_7v3bg"]
+[ext_resource type="Script" uid="uid://bo2lyxu03hcpd" path="res://scenes/fight_scene/fight_sceneUI/Sripts/Cursor.gd" id="5_xretv"]
+[ext_resource type="Resource" uid="uid://cnv7rhetrddxm" path="res://scenes/fight_scene/Players/DATA_Player/Recursos/Bardo.tres" id="6_p35ek"]
+[ext_resource type="PackedScene" uid="uid://df0w3twroh4ic" path="res://scenes/fight_scene/fight_sceneUI/Taco.tscn" id="6_xretv"]
+
+[sub_resource type="Theme" id="Theme_ka4eu"]
+
+[sub_resource type="Theme" id="Theme_y8u5u"]
+default_font = ExtResource("2_nctq4")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xretv"]
+bg_color = Color(0.03839716, 0.038397174, 0.038397126, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.9999998, 0.89602464, 0.8219683, 1)
+border_blend = true
+
+[node name="FightSceneUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y8u5u")
+enemi = ExtResource("2_gl07w")
+Espada = ExtResource("3_2ysav")
+Bruja = ExtResource("4_rxvcw")
+Cazadora = ExtResource("5_7v3bg")
+Bardo = ExtResource("6_p35ek")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+anchor_left = 0.098000005
+anchor_top = 0.71900004
+anchor_right = 0.90900004
+anchor_bottom = 1.0
+offset_left = -3.4400024
+offset_top = 0.3199463
+offset_right = -3.5200195
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_ka4eu")
+alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+texture = ExtResource("1_ka4eu")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+script = ExtResource("4_xretv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08800001
+anchor_top = 0.08400001
+anchor_right = 0.90300006
+anchor_bottom = 0.896
+offset_left = 0.05599785
+offset_top = 0.031999588
+offset_right = 0.08598328
+offset_bottom = 0.0079956055
+theme = SubResource("Theme_y8u5u")
+theme_override_constants/separation = 22
+alignment = 1
+script = ExtResource("5_xretv")
+
+[node name="Attack" type="Button" parent="HBoxContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Attack"
+
+[node name="Items" type="Button" parent="HBoxContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Items"
+
+[node name="Run" type="Button" parent="HBoxContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Run"
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_ka4eu")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Taco" parent="." instance=ExtResource("6_xretv")]
+layout_mode = 0
+offset_left = 99.99999
+offset_top = 523.0
+offset_right = 612.0
+offset_bottom = 1035.0
+
+[node name="Notificaciones" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 35.0
+offset_top = 10.0
+offset_right = -45.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xretv")
+
+[node name="Label" type="Label" parent="Notificaciones"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 18.0
+offset_right = 1022.0
+offset_bottom = 93.0
+pivot_offset = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("2_nctq4")
+theme_override_font_sizes/font_size = 36
+text = "El GODIN Se interpone en tu 
+camino"
+
+[node name="Label2" type="Label" parent="Notificaciones"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -53.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("2_nctq4")
+theme_override_font_sizes/font_size = 36
+text = ">"
+
+[connection signal="pressed" from="HBoxContainer/NinePatchRect/VBoxContainer/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="HBoxContainer/NinePatchRect/VBoxContainer/Run" to="." method="_on_run_pressed"]

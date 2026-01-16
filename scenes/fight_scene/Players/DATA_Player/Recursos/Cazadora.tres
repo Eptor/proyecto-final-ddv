@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PartyData" load_steps=3 format=3 uid="uid://b281a1las06jc"]
+
+[ext_resource type="Script" uid="uid://d24e3s46ygdn6" path="res://scenes/fight_scene/Players/DATA_Player/DATA_Player.gd" id="1_cwy3x"]
+[ext_resource type="Texture2D" uid="uid://tyly7ufqmfdh" path="res://assets/characters/CazadoraM.png" id="2_vj7tm"]
+
+[resource]
+script = ExtResource("1_cwy3x")
+name = "Cazadora"
+texture = ExtResource("2_vj7tm")
+damage = 10
