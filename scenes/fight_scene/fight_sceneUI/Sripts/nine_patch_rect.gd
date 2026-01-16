@@ -1,1 +1,1 @@
-class_name window_deafult  extends NinePatchRect
+class_name window_deafult extends NinePatchRect

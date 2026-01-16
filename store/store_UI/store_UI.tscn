@@ -70,6 +70,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "BUY"
 
+[node name="Items" type="Button" parent="HBoxContainer/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Items"
+
 [node name="Run" type="Button" parent="HBoxContainer/NinePatchRect/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
@@ -80,11 +85,13 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.10300001
 anchor_top = 0.068
-anchor_right = 0.95
+anchor_right = 0.83900005
 anchor_bottom = 0.155
+offset_left = 0.07798767
 offset_top = 0.04799843
-offset_bottom = 26.079998
-text = "$0"
+offset_right = 0.013977051
+offset_bottom = 0.07999802
+text = "Money: 0"
 label_settings = SubResource("LabelSettings_khh63")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="HBoxContainer"]
@@ -114,15 +121,15 @@ alignment = 1
 [node name="option1" type="Button" parent="HBoxContainer/NinePatchRect2/HBoxContainer"]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
-text = "Salud Pequeña"
+text = "Potion Red"
 icon = ExtResource("3_khh63")
 
 [node name="option2" type="Button" parent="HBoxContainer/NinePatchRect2/HBoxContainer"]
 layout_mode = 2
-text = "Salud Grande"
+text = "Potion Yellow"
 icon = ExtResource("4_xahyl")
 
 [node name="option3" type="Button" parent="HBoxContainer/NinePatchRect2/HBoxContainer"]
 layout_mode = 2
-text = "Poción de Daño"
+text = "Potion Purple"
 icon = ExtResource("5_u8v28")

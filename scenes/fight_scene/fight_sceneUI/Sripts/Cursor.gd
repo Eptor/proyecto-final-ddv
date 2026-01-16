@@ -1,5 +1,4 @@
-class_name Menu
-extends Container
+class_name Menu extends Container
 
 signal button_focused(button: BaseButton)
 signal button_pressed(button: BaseButton)

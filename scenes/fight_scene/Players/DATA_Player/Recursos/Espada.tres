@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PartyData" load_steps=3 format=3 uid="uid://cbjnuess7p7pk"]
+
+[ext_resource type="Script" uid="uid://d24e3s46ygdn6" path="res://scenes/fight_scene/Players/DATA_Player/DATA_Player.gd" id="1_jt1l2"]
+[ext_resource type="Texture2D" uid="uid://dvyssqy10pgoj" path="res://assets/characters/EspadaP.png" id="2_hium3"]
+
+[resource]
+script = ExtResource("1_jt1l2")
+name = "Espada"
+texture = ExtResource("2_hium3")
+HP = 50
+damage = 10
